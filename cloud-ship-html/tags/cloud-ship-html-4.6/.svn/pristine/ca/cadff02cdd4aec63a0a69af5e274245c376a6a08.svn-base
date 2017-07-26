@@ -1,0 +1,109 @@
+<div class="loginWrap">
+<div class="container">
+    <div class="panel margin-bottom-0">
+        <div class="panel-heading header">
+            <div class="panel-title "><img src="../../images/login/line.png">找回密码</div>
+        </div>
+        <div class="panel-body text-center">
+            <ul class="list-inline row step">
+                <li>
+                    <ul class="list-inline">
+                        <li class="hexagon"><img src="../../images/login/hexagon.png"/><p>1</p></li>
+                        <li class="stepActive">验证手机号</li>
+                        <li class="line"></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="list-inline">
+                        <li class="hexagon"><img src="../../images/login/hexagon-grey.png"/><p>2</p></li>
+                        <li class="unActive">输入新密码</li>
+                        <li class="line"></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="list-inline">
+                        <li class="hexagon"><img src="../../images/login/hexagon-grey.png"/><p>3</p></li>
+                        <li class="unActive">完成</li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="form-horizontal" name="verifyTel">
+                <div class="col-md-7 col-xs-12 col-md-offset-2">
+                    <div class="form-group" style="margin-bottom:0;">
+                        <label class="control-label hidden-xs col-md-3 col-xs-5">手机号</label>
+                        <div class="col-md-8 col-xs-12">
+                            <input numberic type="text"
+                                   class="form-control radius-0"
+                                   placeholder="请输入注册时手机号"
+                                   name="mobile"
+                                   required
+                                   minlength="11"
+                                   maxlength="11"
+                                   ng-minlength="11"
+                                   ng-maxlength="11"
+                                   ng-model="vm.params.mobile">
+                            <div style="min-height:12px;" class="text-left" ng-class="{error:verifyTel.mobile.$invalid}" ng-messages="verifyTel.mobile.$error">
+                                <p  ng-if="verifyTel.mobile.$touched" ng-message="required">*手机号不可为空</p>
+                                <p  ng-if="verifyTel.mobile.$touched" ng-message="minlength,maxlength">*输入11位的手机号码</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="form-group">-->
+                        <!--<label class="control-label hidden-xs col-md-3 col-xs-5">图形验证码</label>-->
+                        <!--<div class="col-md-8 col-xs-12">-->
+                            <!--<div class="row">-->
+                                <!--<div class="col-md-7 col-xs-12">-->
+                                    <!--<input type="text" placeholder="图形验证码" class="form-control margin-bottom-10 radius-0" ng-minlength="6" ng-maxlength="6" name="verifyimgcode" required ng-model="vm.params.inputValue">-->
+                                <!--</div>-->
+                                <!--<div class="col-md-5 col-xs-12">-->
+                                    <!--<div class="verifyImg">图形验证码</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+
+
+                    <div class="form-group">
+                        <label class="control-label hidden-xs col-md-3 col-xs-5">手机验证码</label>
+                        <div class="col-md-8 col-xs-12">
+                            <div class="row">
+                            <div class="col-md-7 col-xs-12">
+                                <input type="text"
+                                       placeholder="请输入验证码"
+                                       name="verifyTelcode"
+                                       required
+                                       minlength="6"
+                                       maxlength="6"
+                                       ng-minlength="6"
+                                       ng-maxlength="6"
+                                       class="form-control margin-bottom-10 radius-0"
+                                       ng-model="vm.params.verify">
+                            </div>
+                        <!--</div>-->
+                        <!--<div class="padding-left-9 col-sm-2 col-xs-12">-->
+                            <div class="col-md-5 col-xs-12">
+                                <button type="button"
+                                        class="verify-btn-float btn radius-0"
+                                        ng-click="send.sendCode()">
+                                    <span ng-if="checkMessage">短信验证</span>
+                                    <span ng-style="send.color" ng-if="!checkMessage">{{send.second}}</span>
+                                    <span ng-if="!checkMessage">S后重新发送</span>
+                                   </button>
+                            </div>
+                        </div>
+                            </div>
+
+                    </div>
+                    <div class="margin-bottom-145">
+                        <button type="submit"
+                                class="btn btn-warning col-md-8 col-xs-12 col-md-offset-3 col-sm-offset-3 radius-0"
+                                ng-disabled="vm.params.mobile.length != 11 || vm.params.verify.length !=6"
+                                ng-click="vm.phone()">下一步</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

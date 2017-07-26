@@ -1,0 +1,28 @@
+<div class="col-md-12 homepage-wrap" style="padding-top:49px;padding-bottom:49px;">
+    <!--头像-->
+    <div class="col-md-2 homepage-img-wrap">
+        <img ng-src="{{vm.data.head}}" alt="头像预览"
+             style="padding:3px;border:2px; height: 100px; width: 130px; border:solid #e8e8e8" class="img-responsive">
+    </div>
+    <!--信息-->
+    <div class="col-md-10 home-page-user-wrap">
+        <div class="pull-right pointer"  ui-sref="app.user.homepageDetail">
+            <i class="home-icon-write"></i>
+            <span>编辑</span>
+        </div>
+            <p><strong>欢迎你,</strong> <span>{{vm.data.name}}</span></p>
+        <ul class="homepage-user-detail-wrap">
+            <li class="user-li-1">手机 : <span>{{vm.data.mobile}}</span></li>
+            <li class="user-li-2">邮箱 : <span>{{vm.data.mail}}</span></li>
+        </ul>
+        <!--下面按钮-->
+        <ul class="homepage-bottom-btn-wrap padding-top-20">
+            <li class="pointer home-page-li" ui-sref="app.user.company"><div style="display:inline-block;min-width:20px;margin-right:10px;"><i class="home-icon-company"></i></div>我的公司</li>
+            <li class="pointer home-page-li" ui-sref="app.user.servicesRequest"><div style="display:inline-block;min-width:20px;margin-right:10px;"><i class="home-icon-service"></i></div>我的服务</li>
+            <li class="pointer home-page-li" ui-sref="app.user.message"><div style="display:inline-block;min-width:20px;margin-right:10px;"><i class="home-icon-message"></i></div>我的消息</li>
+
+        </ul>
+
+    </div>
+
+</div>

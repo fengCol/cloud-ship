@@ -1,0 +1,124 @@
+
+<div class="company-title">
+    <h4 class="user-title">公司信息</h4>
+    <div class="company-edit">
+        <div class="tagLevel" style="display: inline-block" >
+            <span ng-mouseenter="levelShow=true" ng-mouseleave="levelShow=false" ng-show="vm.comDetails.grade">L{{vm.comDetails.grade}}级</span>
+        </div>
+        <!--<div class="levelCompany" ng-if="levelShow">-->
+            <!--<p>L{{vm.comDetails.grade}}级合作伙伴:</p>-->
+            <!--<p>忠实可靠，服务优质，以最实惠的价格，获取最专业的服务</p>-->
+        <!--</div>-->
+        <button class="btn orange-btn"
+                ng-click="vm.cooperate()"
+                ng-if="vm.comDetails.grade == 'null'|| vm.comDetails.grade == 0">合作入驻</button>
+        <button ui-sref="app.user.companyEdit({id:vm.comDetails.id})" class="btn orange-btn">编辑</button>
+    </div>
+</div>
+<div class="company-padding" ng-if="vm.comDetails.cname">
+    <ul class="company-tab">
+        <li class="company-logo">
+            <b style="vertical-align: top">公司Logo</b>
+            <img style="height: 140px;width: 200px" src="{{vm.comDetails.logo}}">
+        </li>
+        <li><b>公司名称</b><span>{{vm.comDetails.cname}}</span></li>
+        <li><b>公司网址</b><span>{{vm.comDetails.website}}</span></li>
+        <li><b>公司电话</b><span>{{vm.comDetails.mobile}}</span></li>
+        <li><b>行业类型</b><span>{{vm.comDetails.industry | industry}}</span></li>
+        <li><b>公司阶段</b><span>{{vm.comDetails.stage | stage}}</span></li>
+        <li><b>公司简介</b><span>{{vm.comDetails.profile}}</span></li>
+        <li><b>关于企业</b><span>{{vm.comDetails.details}}</span></li>
+        <li><b>相关服务</b><span>{{vm.comDetails.servers}}</span></li>
+        <li><b>服务优势</b><span>{{vm.comDetails.advantage}}</span></li>
+        <li><b style="vertical-align: top">宣传图&nbsp&nbsp&nbsp&nbsp&nbsp</b>
+            <img style="height: 260px;width: 400px;text-indent: 0px;border: 1px solid #e8e8e8;padding: 14px;" src="{{vm.comDetails.advertising}}">
+        </li>
+    </ul>
+</div>
+    <div class="companyEdit-padding"  ng-if="!vm.comDetails.cname">
+        <form>
+    <ul>
+        <li>
+            <div class="com-logo">公司logo</div>
+            <div class="companyEdit-wrapper">
+                <img src="../../images/user/empty-logo.png">
+            </div>
+        </li>
+        <li>
+            <span>公司名称</span>
+            <input class="companyEdit-input"
+                   ng-model="vm.company.cname"
+                   type="text"
+                   placeholder="必填项"
+                   required
+                   disabled/>
+        </li>
+        <li>
+            <span>公司网址</span>
+            <input class="companyEdit-input" ng-model="vm.company.website" type="text"  disabled/>
+        </li>
+        <li>
+            <span>公司电话</span>
+            <input class="companyEdit-input"
+                   ng-model="vm.company.mobile"
+                   name="comPhone"
+                   placeholder="必填项"
+                   disabled
+                   required/>
+        </li>
+        <li>
+            <span>行业类型</span>
+            <select
+                    class="companyEdit-input"
+                    ng-model="vm.company.industry"
+                    disabled>
+                <option value="" selected>全部&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+                <option value="1" ng-checked="vm.company.industry==1">
+                    IT/互联网&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+                <option value="2" ng-checked="vm.company.industry==2">
+                    媒体&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+                <option value="3" ng-checked="vm.company.industry==3">
+                    金融&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+            </select>
+            <!--<input class="companyEdit-input" type="text" ng-model="vm.company.industry" placeholder="所属行业"/>-->
+        </li>
+        <li>
+            <span>公司阶段</span>
+            <select class="companyEdit-input" ng-model="vm.company.stage"
+                    disabled>
+                <option value="">全部</option>
+                <option value="1">初创型</option>
+                <option value="2">成长型</option>
+                <option value="3">成熟型</option>
+                <option value="4">已上市</option>
+
+            </select>
+        <li>
+            <span class="pull-left">公司简介</span>
+            <textarea class="companyEdit-text" maxlength="100" ng-model="vm.company.profile"
+                      placeholder="限100字以内" disabled></textarea>
+        </li>
+        <li>
+            <span class="pull-left">关于企业</span>
+            <textarea class="companyEdit-text" maxlength="100" ng-model="vm.company.details"
+                      placeholder="限100字以内"  disabled></textarea>
+        </li>
+        <li>
+            <span class="pull-left">相关服务</span>
+            <textarea class="companyEdit-text" maxlength="300" ng-model="vm.company.servers"
+                      placeholder="相关服务  限300字以内" disabled></textarea>
+        </li>
+        <li>
+            <span class="pull-left">服务优势</span>
+            <textarea class="companyEdit-text" maxlength="300" ng-model="vm.company.advantage"
+                      placeholder="服务优势  限300字以内" disabled></textarea>
+        </li>
+        <li>
+            <div class="com-logo">宣传图</div>
+            <img   style="margin-left:19px" src="../../images/user/empty-publicity.png">
+        </li>
+
+    </ul>
+        </form>
+    </div>
+

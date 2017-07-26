@@ -1,0 +1,82 @@
+<div class="user-title">
+    <h4>修改密码</h4>
+</div>
+
+<!--大框子部分-->
+<div class="user-pwd-wrap">
+    <form class="form-horizontal" name="passWordForm" novalidate>
+        <div class="form-group" style="margin-bottom:0;">
+            <label class="col-md-3 control-label change-title">当前密码</label>
+            <div class="col-md-9">
+                <input class="form-control"
+                       type="password"
+                       ng-model="vm.data.pwd"
+                       required
+                       maxlength="16">
+            </div>
+
+            <div class="col-md-offset-3 col-md-9">
+                <p class="error" style="min-height:12px;"></p>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom:0">
+            <label class="col-md-3 control-label change-title">新密码</label>
+            <div class="col-md-9">
+                <input type="password"
+                       class="form-control"
+                       ng-model="vm.data.pwdNew"
+                       ng-minlength="6"
+                       ng-maxlength="16"
+                       name="password"
+                       onkeyup="this.value=this.value.replace(/\W/g,'')"
+                       onafterpaste="this.value=this.value.replace(/\W/g,'')"
+                       required
+                        maxlength="16">
+            </div>
+            <div class="col-md-offset-3 col-md-9">
+                        <p class="error" style="min-height:12px;">
+                    <span>
+                        <span ng-show="passWordForm.password.$invalid&&passWordForm.password.$error.minlength">*密码长度不小于6</span>
+                        <span ng-show="passWordForm.password.$invalid&&passWordForm.password.$error.maxlength">*密码长度不超过16</span>
+                        <span ng-show="vm.data.pwdNew == vm.data.pwd&&vm.data.pwdNew != null&&vm.data.pwd != null">*新密码旧密码不可一致</span>
+                   </span>
+                        </p>
+                    </div>
+
+        </div>
+        <div class="form-group" style="margin-bottom:0">
+            <label class="col-md-3 control-label change-title">确认密码</label>
+            <div class="col-md-9">
+                <input type="password"
+                       class="form-control"
+                       ng-model="vm.rePwd"
+                       name="again"
+                       onkeyup="this.value=this.value.replace(/\W/g,'')"
+                       onafterpaste="this.value=this.value.replace(/\W/g,'')" required
+                       maxlength="16">
+            </div>
+            <div class="col-md-offset-3 col-md-9">
+                <p style="min-height:12px;">
+                    <span class="error" ng-if="passWordForm.password.$valid&&passWordForm.again.$dirty">
+                        <span ng-show="vm.rePwd !== vm.data.pwdNew">*两次密码输入不一致</span>
+                    </span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <button ng-click="vm.pwdSave()" style="width:100%;opacity:1;"
+                        class="btn orange-btn btn-width"
+                        ng-disabled="passWordForm.$invalid||vm.rePwd !== vm.data.pwdNew">
+                    提交
+                </button>
+            </div>
+        </div>
+
+    </form>
+
+</div>

@@ -1,0 +1,13 @@
+<div class="modal-header submitB_header">
+<span class="submitB_header_text">提示</span>
+<button type="button"  data-dismiss="modal" aria-label="Close" ng-click="closeTips()">
+    <img src="../../images/thirdpService/submit_close.png">
+</button>
+</div>
+<div class="modal-body submitB_content submitC_content">
+    <h3>注意!</h3>
+    <p>{{ content}}</p>
+    <div class="modal-button">
+        <button style="font-size: 14px" ng-click="getTrue()">确认</button>
+    </div>
+</div>

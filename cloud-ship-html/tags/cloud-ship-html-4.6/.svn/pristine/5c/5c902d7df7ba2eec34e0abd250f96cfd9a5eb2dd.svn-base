@@ -1,0 +1,279 @@
+/*banner*/
+.banner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner .carousel-control:focus {
+    opacity: 0.5 !important;
+}
+.carousel-inner img{
+    width: 100%;
+}
+@media screen and (max-width: 767px) {
+    .carousel-indicators li,
+    .carousel-indicators .active {
+        display: none;
+    }
+}
+.carousel-indicators li,
+.carousel-indicators .active {
+    width: 14px;
+    height: 14px;
+    margin: 12px;
+}
+
+.banner-pre,
+.banner-next {
+    position: absolute;
+    top: 47%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -10px;
+}
+
+/*banner over*/
+/*advantage start*/
+.feature {
+    overflow: hidden;
+    position: relative;
+}
+
+.feature-card{
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    margin: 80px auto;
+}
+.feature-card > p{
+    margin-top: 40px;
+}
+
+.feature-line {
+    position: absolute;
+    right: 30%;
+    top: 15%;
+}
+
+.feature-card-right{
+    text-align: left;
+    color: #6b6767;
+    padding-left: 4rem;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.feature-card-right > p{
+    margin-bottom: 25px;
+    font-size: 16px;
+    color: #999;
+}
+.feature-card-right > span{
+    color: #4ea4fe;
+}
+@media screen  and (max-width: 991px){
+    .feature-line {
+        right: 42%;
+        top: 55%;
+    }
+    .feature-card-right{
+        padding-left: 10rem;
+    }
+    .feature-card-right{
+        text-align: center;
+        padding: 0;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .feature-card{
+        margin: 40px auto;
+    }
+}
+
+/*advantage over*/
+/*标题和其他*/
+.home-gray{
+    background-color: #fbfbfb;
+}
+.home-blue{
+    background-color: #0093da;
+    color: #fff !important;
+}
+.home-title{
+}
+
+.home-title h2{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding: 0 20px;
+}
+
+.home-tips p{
+    max-width: 327px;
+    margin: 0 auto 40px;
+    color: #999999;
+    font-size: 12px;
+    line-height: 20px;
+}
+.tips-explin{
+     max-width: 600px !important;
+}
+.tips-title{
+    font-family: "Microsoft YaHei";
+}
+.tips-line{
+    display:inline-block;
+    width: 10%;
+    height: 1px;
+    background-color: #dddddd;
+    margin-bottom: 7px;
+}
+/*标题结束*/
+
+/*创业服务*/
+.pioneeringService{
+    margin-bottom: 50px;
+}
+.pioneeringService > span{
+    display: inline-block;
+    width: 8%;
+}
+.pioneeringService > div{
+    display: inline-block;
+    width: 16%;
+    vertical-align: middle;
+    margin-bottom: 1%;
+}
+.pioneeringService > span > img{
+    width: 80%;
+    max-width: 40px;
+    max-height: 40px;
+
+}
+.pioneeringService > div > img{
+    width: 80%;
+    max-width: 155px;
+}
+.home-icon-down{
+    width: 100% !important;
+    height: 80px;
+    text-align: right;
+}
+.home-icon-down > img{
+    transform: rotate(90deg);
+    position: relative;
+    right: 11%;
+    top: 28%;
+}
+
+.home-icon-left > img {
+    transform: rotate(180deg);
+}
+@media screen  and (max-width: 991px){
+    .home-icon-down > img{
+        right: 8%
+    }
+}
+/*人才推荐*/
+.home-personnel{
+    margin-bottom: 25px;
+}
+.home-personnel >div{
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.home-personnel p{
+    color: #999999;
+    font-size: 16px;
+    padding: 15px 0;
+}
+.home-personnel img{
+    width: 100%;
+    max-width: 117px;
+}
+@media screen  and (max-width: 449px){
+    .home-personnel img{
+        max-width: 80px;
+    }
+}
+/*创业服务结束*/
+/*VC投资*/
+.home-invest{
+    margin-bottom: 50px;
+}
+.home-invest >div{
+    display: inline-block;
+    width: 24%;
+}
+
+.home-invest-card{
+    overflow: hidden;
+    margin: 10px auto;
+    min-width: 210px;
+}
+.home-invest-card >img {
+    width: 70%;
+    max-width: 200px;
+}
+/*VC投资结束*/
+/*合作伙伴*/
+.home-partner{
+    margin-top:35px;
+    margin-bottom:40px;
+}
+.home-partner > div{
+    display: inline-block;
+    text-align: center;
+    width: 19%;
+}
+.home-partner img  {
+    width: 80%;
+    max-width: 150px;
+}
+@media screen  and (max-width: 600px){
+    .home-partner img{
+        width: 100%;
+    }
+}
+/*合作伙伴结束*/
+/*百宝箱开始*/
+.home-linkbox,
+.home-linkbox > ul {
+    margin: 2% 0;
+    padding-left: 4%;
+}
+.home-linkbox > ul li:first-child{
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+}
+.home-linkbox a{
+    color: #666;
+    line-height: 1.8rem;
+    text-decoration: none;
+}
+.home-linkbox a:hover,
+.home-linkbox a:focus{
+    font-size: 15px;
+    color: #444;
+    text-decoration: none;
+}
+.pos1{
+    left: 38%
+}
+.pos2{
+    left: 35%
+}
+@media screen and (min-width: 1024px) {
+    .pos1{
+        left: 40%
+    }
+    .pos2{
+    left: 36%
+    }
+}

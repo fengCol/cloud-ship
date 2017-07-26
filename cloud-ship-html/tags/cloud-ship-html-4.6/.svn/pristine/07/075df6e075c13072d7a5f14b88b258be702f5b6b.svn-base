@@ -1,0 +1,195 @@
+
+.user-service-tab {
+    padding: 30px 6%;
+}
+.user-service-tab th{
+    font-size:14px;
+    color:#686868;
+
+}
+.user-service-tab thead{
+    background:#f0f0f0;
+
+}
+.user-service-tab td {
+    vertical-align: middle !important;
+    font-weight: bold;
+    font-size:14px;
+}
+
+.user-service-tab td {
+    word-break: break-all;
+}
+
+.user-service-nav {
+    overflow: hidden;
+    margin-bottom: 22px;
+    border-bottom: 1px solid #dedede;
+}
+
+.user-service-nav li {
+    float: left;
+    padding: 6px 0;
+}
+
+.user-service-nav li:hover {
+    cursor: pointer;
+}
+
+.user-service-nav li a {
+    /*padding: 0 10px;*/
+    padding-bottom:5px;
+    color: #333;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+.user-service-nav li a:hover {
+    color: #ff971c;
+}
+.active-nav{
+    color: #ff971c !important;
+    border-bottom: 2px solid #ff971c;
+    /*border-left: 1px solid #c2c2c2;*/
+}
+.user-service-nav li a span{
+    border: none;
+    /*margin-bottom: 6px;*/
+    padding-left: 15px;
+    padding-right: 15px;
+
+    border-right: 1px solid #c2c2c2;
+}
+.noboder {
+
+    border-left: 1px solid #c2c2c2;
+}
+.user-service-nav-border {
+
+
+}
+
+.user-service-tab th {
+    text-align: center;
+    border: 0 !important;
+    background-color: #f0f0f0;
+}
+
+.user-service-tab td {
+    text-align: center;
+}
+
+.user-service-pag {
+    float: right;
+    margin-top: 0;
+    padding-bottom: 250px;
+}
+
+.user-service-pag a {
+    margin: 0 10px;
+    color: #666666 !important;
+}
+
+.user-service-pag a:hover {
+    background-color: #fd9c4d !important;
+    color: #fff !important;
+}
+
+.user-forService-title {
+    overflow: hidden;
+    position: relative;
+}
+
+.addServicesBtn {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    -webkit-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.addServicesBtn:hover {
+    color: #fff;
+}
+/*查看服务*/
+.user-service-tab .checkserver:hover{
+    color: #c2c2c2;
+    cursor: pointer;
+}
+
+/* 新增服务 */
+.addServices-input {
+    width: 50%;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #e8e8e8;
+}
+
+.addServices-padding {
+    padding-left: 10%;
+    padding-bottom: 200px;
+    overflow: hidden;
+}
+
+.addServices-padding ul {
+    font-size: 14px;
+    margin-top: 40px;
+    color: #666666;
+}
+
+.addServices-padding ul li {
+    margin: 15px 0;
+}
+
+.addServices ul li span {
+    margin-right: 10px;
+    color: #666666;
+}
+
+.addServices-text {
+    resize : none;
+    padding: 0 10px;
+    margin-left: 10px;
+    width: 70%;
+    height: 180px;
+    border: 1px solid #e8e8e8;
+}
+
+.addServices-btn {
+    padding-top: 20px;
+}
+
+.addServices-btn-left {
+    width: 130px;
+    margin-left: 10%;
+    padding: 8px;
+    font-size: 14px;
+    border: 0;
+    border-radius: 4px;
+}
+
+.addServices-btn-right {
+    width: 130px;
+    margin-left: 3%;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.addServicesSelect {
+    width: 20%;
+    float: left;
+    margin-left: 10px;
+
+
+}
+
+.addServicesSelect select {
+    border-radius: 0;
+    border: 1px solid #e8e8e8;
+
+}
+
+.padding-top-5 {
+    padding-top: 5px;
+}

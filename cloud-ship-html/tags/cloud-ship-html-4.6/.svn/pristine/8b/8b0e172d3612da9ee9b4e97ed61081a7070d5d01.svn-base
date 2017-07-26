@@ -1,0 +1,138 @@
+<!--模态框开始-->
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
+        <span style=" position: relative;left: 1px" >&times;</span>
+    </button>
+    <h5 class="modal-title" ng-class="{'modalAction':loginModal == 1}" ng-click="loginModal = 1">
+        用户登录
+    </h5>
+    <h5 class="modal-title" ng-class="{'modalAction':loginModal == 2}" ng-click="loginModal = 2">
+        用户注册
+    </h5>
+</div>
+
+<div class="modal-body">
+    <!--//登录-->
+    <form ng-if="loginModal == 1" class="my-login-form" name="loginForm">
+        <div class="form-group " style="margin-bottom:0">
+            <div class="input-group phone-psd">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></div>
+                <input type="text" name="mobile" ng-pattern="/\d{11}/" class=" form-control"
+                       placeholder="请输入手机号" ng-model='vm.loginUp.mobile'
+                       ng-minlength="11" maxlength="11" required>
+            </div>
+            <p style="min-height:12px;" class="warning-tips-red">
+               <span ng-if="loginForm.mobile.$invalid && loginForm.mobile.$touched ">请输入11手机号码</span>
+            </p>
+        </div>
+        <div class="form-group " style="margin-bottom:0">
+            <div class="input-group phone-psd">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></div>
+                <input type="password" name="password" class=" form-control" placeholder="密码"
+                       ng-model="vm.loginUp.pwd" ng-pattern="/^\w{6,16}$/"
+                       maxlength="16" minlength="6" required>
+            </div>
+            <p class="warning-tips-red" style="min-height:12px;">
+                <span ng-if="loginForm.password.$invalid && loginForm.password.$touched ">请输入6-16位数字、字母和下划线组成的密码</span>
+            </p>
+        </div>
+        <div class="keeps">
+            <div class="checkbox" style="display: inline-block">
+                <label>
+                    <input type="checkbox" ng-model="vm.setCookie"/>
+                    <s id="cookie" ng-click="Cookie()" ng-class="{checked:vm.setCookie}" class="unchecked"></s>
+                    <span>记住用户名</span>
+                </label>
+            </div>
+            <span class="forget-psd">
+                <a data-dismiss="modal" ng-click="toForgetPwd()" ui-sref="app.verifyTel">忘记密码?</a>
+            </span>
+        </div>
+        <button type="submit"
+                class="btn btn-warning btn-block my-login"
+                ng-click=" vm.userLogin()"
+                ng-disabled="loginForm.$invalid" repeat-click>
+            登录
+        </button>
+
+    </form>
+    <!--//注册-->
+    <form ng-if="loginModal == 2" class="my-login-form" name="registerForm">
+        <div class="form-group" style="margin-bottom:0">
+            <div class="input-group phone-psd">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></div>
+                <input type="text" name="mobile" class="form-control" placeholder="请输入手机号码"
+                       ng-blur="vm.registerPhone()" ng-model="vm.params.mobile"
+                       ng-pattern="/\d{11}/" ng-minlength="11" maxlength="11" required>
+            </div>
+            <p class="warning-tips-red" style="min-height:12px;">
+                <span ng-if="registerForm.mobile.$invalid && registerForm.mobile.$touched ">请输入11手机号码</span>
+            </p>
+        </div>
+        <div class="form-inline form-group" style="margin-bottom:0">
+            <div class="form-group">
+                <div class="col-md-7 col-sm-7 col-xs-7">
+                        <input type="text" name="checkCode" style="max-width:100%;" class="form-control check-code" placeholder="请输入验证码"
+                               ng-model="vm.params.verify" ng-pattern="/\d{6}/" numberic minlength="6" maxlength="6" required>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-5">
+                        <button type="button" class="btn loginVerifyBtn"
+                                ng-click="send.sendCode()" ng-model="vm.params.verify" ng-disabled="send.canClick"
+                                value="重新发送" id="massage" style="background-color: #4ea4fe;min-width:100%">
+                            <span ng-if="checkMessage">短信验证</span>
+                            <span ng-style="send.color" ng-if="!checkMessage">{{send.second}}</span>
+                            <span ng-if="!checkMessage">S</span>
+                        </button>
+                </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <p style="min-height:12px;"
+                       class="warning-tips-red">
+                        <span ng-if="registerForm.checkCode.$invalid && registerForm.checkCode.$touched ">请输入6位数字验证码</span>
+                    </p>
+                </div>
+            </div>
+
+
+
+            </div>
+        </div>
+        <div class="form-group" style="margin-bottom:0">
+            <div class="input-group phone-psd">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></div>
+                <input type="password" name="password" class=" form-control" placeholder="请输入登录密码"
+                       ng-model="vm.params.password" ng-pattern="/^\w{6,16}$/" maxlength="16" minlength="6" required>
+            </div>
+            <p style="min-height:12px;" class="warning-tips-red">
+               <span ng-if="registerForm.password.$invalid && registerForm.password.$touched ">请输入6-16位数字、字母和下划线组成的密码</span>
+            </p>
+        </div>
+        <div class="keeps">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="accpet" ng-model="vm.accpet"
+                           ng-true-value="true" ng-false-value="false" required>
+                    <s ng-class="{checked:vm.accpet}"
+                       class="unchecked"
+                       ng-click="accpetRules()">
+                    </s>
+                    <span style="vertical-align: bottom">我已阅读并同意</span>
+                </label>
+                <span style="color: #4ea4fe" ng-click="vm.userDeal()">《草船云用户协议》</span>
+            </div>
+            <p ng-if="!vm.accpet" class="warning-deal">
+                请阅读用户协议
+            </p>
+        </div>
+        <button type="button" class="btn btn-warning btn-block my-login"
+                ng-click=" vm.register()" ng-disabled="!vm.accpet || registerForm.$invalid" repeat-click>
+            注册
+        </button>
+    </form>
+</div>
+<!--模态框结束-->
+
+
+
+
+

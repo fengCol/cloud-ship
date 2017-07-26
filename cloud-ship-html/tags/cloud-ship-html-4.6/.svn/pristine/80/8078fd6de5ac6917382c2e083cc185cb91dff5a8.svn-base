@@ -1,0 +1,12 @@
+/*.user-pwd-wrap{*/
+    /*padding:142px 258px 200px 258px;*/
+/*}*/
+.user-pwd-wrap input{
+    border-radius: 0;
+
+}
+
+
+.error{
+    color: red;
+}

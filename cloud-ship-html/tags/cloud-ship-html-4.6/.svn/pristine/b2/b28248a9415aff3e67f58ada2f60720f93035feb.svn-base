@@ -1,0 +1,157 @@
+<header>
+    <div id="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="hidden-xs phone-none" id="hidden-xs" ng-class="{'col-md-10':!vm.isLogin,'col-md-7':vm.isLogin}">
+                    <img src="../images/home/phone.png" style="vertical-align: middle;margin-right: 3px;"><span>客服热线：010-59478634</span>
+                </div>
+                <div class="col-md-3 col-xs-7 text-right" ng-if="vm.isLogin">
+                    <a ui-sref="app.user.company"
+                       ng-if="vm.comDetails.grade == 'null'|| vm.comDetails.grade == 0">合作入驻&nbsp&nbsp</a>
+                    <a ui-sref="app.user.servicesRequest({uid:vm.uid})">我的服务&nbsp&nbsp</a>
+                    <a ui-sref="app.user.message({uid:vm.uid})">通知
+                    <i class="message-i" ng-if="informMessage>0"></i></a>
+                </div>
+                <div class="col-md-2 text-right" ng-if="!vm.isLogin"
+                     ng-class="{'col-xs-12':!vm.isLogin,'col-xs-4':vm.isLogin}">
+                    <a ui-sref="app.login({loginMod:1})">登录</a>
+                    <span> | </span>
+                    <a ui-sref="app.login({loginMod:2})">注册</a>
+                </div>
+                <div class="col-md-2 col-xs-5 text-right" ng-if="vm.isLogin">
+                    <span ui-sref="app.user.homepage({uid:vm.uid})" style="cursor:pointer">{{vm.userName}}</span>
+                    <span> | </span>
+                    <a ng-click="vm.logout()"><span style="cursor:pointer">退出</span></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img src="../images/logo.png" id="logo" alt="logo" ui-sref="app.home">
+                    <img src="../images/home/slogan.png" id="slogan" ui-sref="app.home">
+                </a>
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#open-nav">
+                    <span class="glyphicon glyphicon-list flip"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="open-nav">
+                <ul class="nav navbar-nav navbar-right text-center list-inline" data-toggle="collapse">
+                    <li ng-click="vm.clickNav()" ui-sref="app.home"><a ng-class="{active:$state.is('app.home')}">首页</a></li>
+                    <li ng-click="vm.clickNav()"  ui-sref="app.businessService">
+                        <a ng-class="{active:$state.is('app.businessService'),
+                        actived:$state.is('app.link') && bussNav,
+                        moreactived:$state.is('app.details') && bussNav}">创业服务</a>
+                    </li>
+                    <li ng-click="vm.clickNav()"  ui-sref="app.headhunter"><a ng-class="{active:$state.is('app.headhunter')}">人才推荐</a></li>
+                    <li ng-click="vm.clickNav()"  ui-sref="app.hatch.pattern"><a ng-class="{active:$state.is('app.hatch.pattern') || $state.is('app.hatch.feature')||$state.is('app.hatch.project')}">技术孵化</a></li>
+                    <!-- <li ng-click="vm.clickNav()"  ui-sref="app.finance">
+                        <a ng-class="{active:$state.is('app.finance'),
+                        actived:$state.is('app.link') && finaceNav,
+                        moreactived:$state.is('app.details') && finaceNav}">项目融资</a></li> -->
+                    <li ng-click="vm.clickNav()"  ui-sref="app.about"><a ng-class="{active:$state.is('app.about')}">关于我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div data-ui-view="">
+    <div style="background-color: #f8f8f8">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2" style="padding-left: 5px;padding-right: 5px">
+                <div ui-view="sidebar"></div>
+            </div>
+            <div class="col-md-10"  style="padding-left: 5px;padding-right: 5px">
+                <div ui-view="content"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+<div id='goToTop'>
+    <a href='#'><img src='../images/go-top.png' class='go-top' alt='go-top'></a>
+</div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 footer-left">
+                <h1 class="footer-title"><a href="#" ui-sref="app.about">关于草船云</a></h1>
+                <i> | </i>
+
+                <h1><a href="#" ui-sref="app.about">联系我们</a></h1>
+
+                <p>草船云:互联网创业第一技术孵化器</p>
+
+                <p>2012 Company, Inc. 京ICP备13005880号</p>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 footer-middle">
+                <p><span>联系电话</span>(010)59478634 </p>
+
+                <p><span>邮箱支持</span>fuhua@ptteng.com</p>
+
+                <p><span>地&#12288;&#12288;址</span>北京市海淀区翠微路甲10#225室</p>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 footer-right">
+                <img src="../images/wenxin.png" alt="weixin">
+
+                <p>扫描关注草船云微信公众号</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    $(document).ready(function () {
+        var $goToTop = $("#goToTop");
+// hide #goToTop first
+        $goToTop.hide();
+// fade in #goToTop
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $goToTop.fadeIn();
+                } else {
+                    $goToTop.fadeOut();
+                }
+            });
+// scroll body to 0px on click
+            $goToTop.find('.go-top').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+        });
+    });
+</script>
+
+<script type="text/ng-template" id="sureModal.html">
+    <div class="modal-dialog">
+        <div class="modal-content success-modal">
+            <div class="modal-header1 success-modal-title">
+                <button type="button" class="close" ng-click="cancel()">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    提示
+                </h4>
+            </div>
+            <div class="modal-body success-modal-text">
+                <img src="../../images/user/success.png">
+                <h4>&nbsp;&nbsp;&nbsp;申请成功！</h4>
+
+                <p>我们将在3个工作日内给您回复</p>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div><!-- /.modal -->
+</script>

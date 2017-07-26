@@ -1,0 +1,54 @@
+<div class="user-title">
+    <h4>个人信息</h4>
+</div>
+
+<form class="form-horizontal homepage-detail-wrap" name="personForm">
+
+    <div class="form-group">
+        <label class="col-md-2 control-label" style="font-size:14px">头像</label>
+        <div class="col-md-5 user-homepage-background-image">
+            <simple-upload  ng-model="vm.data.img" multi=false></simple-upload>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label" style="font-size:14px">姓名</label>
+        <div class="col-md-10">
+            <input type="text" name="name" class="form-control" style="display: inline-block;width: 48%" ng-model="vm.person.name" ng-pattern="/^[A-z]+$|^[\u4E00-\u9FA5]+$/" required>
+            <div class="homepage-detail-error" ng-messages="personForm.name.$error"  ng-show="personForm.name.$touched">
+                <div ng-message="required">内容不能为空</div>
+                <div ng-message="pattern">请输入中文或英文名字</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label" style="font-size:14px">手机</label>
+        <div class="col-md-10">
+            <input type="text" name="mobile"
+                   class="form-control"
+                   style="display: inline-block;width: 48%;"
+                   ng-disabled="true"
+                   ng-model="vm.person.mobile" ng-pattern="/\d{11}/"
+                   minlength="11" maxlength="11" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label" style="font-size:14px">邮箱</label>
+        <div class="col-md-10">
+            <input type="email" name="email" class="form-control"  style="display: inline-block;width: 48%" ng-model="vm.person.mail" ng-pattern="/[_a-z\d\-\./]+@[_a-z\d\-]+(\.[_a-z\d\-]+)*(\.(info|biz|com|edu|gov|net|am|bz|cn|cx|hk|jp|tw|vc|vn))$/" required>
+            <div class="homepage-detail-error" ng-messages="personForm.email.$error"  ng-show="personForm.email.$touched">
+                <div ng-message="required">内容不能为空</div>
+                <div ng-message="pattern">请输入正确的邮箱地址</div>
+            </div>
+        </div>
+    </div>
+    <!--按钮-->
+    <div class="form-group homepage-detail-footer-btn-wrap">
+        <label class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <button class="btn col-md-5 orange-btn" ng-click="vm.personSave()" ng-disabled="personForm.$invalid">保存</button>
+            <button ui-sref="app.user.homepage" class="btn col-md-offset-2 col-md-5 white-btn">取消</button>
+        </div>
+    </div>
+
+</form>

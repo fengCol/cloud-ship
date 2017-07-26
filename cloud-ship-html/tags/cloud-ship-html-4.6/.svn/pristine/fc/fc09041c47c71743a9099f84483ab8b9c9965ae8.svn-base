@@ -1,0 +1,16 @@
+#草船云
+server {
+    listen       1008;
+    server_name  localhost;
+    location / {
+        root   /Users/gaogao/草船云3期/cloud-ship/trunk;
+        index  index.html index.htm;
+        try_files $uri $uri/ /index.html =404;
+   }
+    location /ajax/ {
+        proxy_pass  http://120.92.4.210:8121/;
+        proxy_set_header        Host            $host;
+        proxy_set_header        X-Real-IP       $remote_addr;
+        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}

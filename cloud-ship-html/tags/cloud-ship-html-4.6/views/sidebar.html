@@ -1,0 +1,30 @@
+<!-- 一级菜单 -->
+<div class="sidebar" ng-if="vm.sideMenu.level == 1">
+    <ul class="nav">
+        <li ng-repeat="li in vm.sideMenu.list" ng-class="{'active': $state.includes(li.url)}"><a
+                ui-sref="{{li.url + li.params}}"><span class="font-14px">{{li.name}}</span></a></li>
+    </ul>
+</div>
+
+<!-- 二级菜单 -->
+<div class="sidebar sub" ng-if="vm.sideMenu.level == 2">
+    <ul class="nav" ng-model="vm.activePanel" role="tablist" aria-multiselectable="true" bs-collapse>
+        <li ng-repeat="list in vm.sideMenu.list" style="cursor: pointer">
+            <div ng-class="$first ? 'border-first' : 'border-shade'"></div>
+            <a bs-collapse-toggle ng-class="{'active': $state.includes(list.url)}" id="{{list.idTag}}">
+                <i ng-class="{true:'{{list.iconBlue}}',false:'{{list.iconBlack}}'}[$state.includes(list.url)]" style="width: 16px"></i>
+                <span style="font-size: 1.6rem">{{list.type}}</span>
+            </a>
+            <ul class="nav collapse nav-sub" role="tabpanel" bs-collapse-target>
+                <li class="" ng-repeat="li in list.list">
+                    <div class="border-shade"></div>
+                    <!--<a ng-class="{'active': $state.includes(li.url)}" ui-sref="{{li.url + li.params}}" target="{{li.target}}">{{li.name}}</a>-->
+                    <a ng-if="li.url"
+                       ng-class="{'active': vm.currentUrl ? vm.currentUrl == li.url + li.params : li.selected}"
+                       ui-sref="{{li.url + li.params}}" ng-click="vm.getUrl(li)" target="{{li.target}}"  style="font-size: 1.4rem;padding-left: 65px">{{li.name}}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+

@@ -1,0 +1,130 @@
+.hunter-header{
+    position: relative;
+    text-align: center;
+
+}
+
+.hunter-btn{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    -webkit-transform:translateX(-50%);
+    -moz-transform:translateX(-50%);
+    transform: translateX(-50%);
+    border: 0;
+    border-radius: 25px;
+    font-size:17px;
+    padding: .8% 5%;
+}
+
+
+.hunter-header img{
+    width: 100%;
+}
+
+.hunter-partner{
+    padding: 5% 0;
+}
+
+.hunter-padding {
+    padding: 12px 0;
+}
+
+.hunter-content h1 {
+    font-size: 22px;
+    margin-top: 70px;
+    font-weight: bold;
+}
+
+.hunter-content h1 span {
+    color: #e8e8e8;
+}
+
+.hunter-text {
+    font-size:12px;
+    color: #666666;
+}
+
+.hunter-partner h4 {
+    margin: 18px 0;
+    font-size: 16px;
+    color: #999999;
+}
+
+.hunter-content-right {
+    background-color: #fbfbfb;
+}
+
+.hunter-img {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.hunter-img img {
+    width: 75%;
+}
+
+.hunter-content-right h3 {
+    text-align: right;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    margin-right: 10px;
+}
+
+.hunter-content-right p {
+    padding-left: 20%;
+    font-size: 14px;
+    color: #666666;
+}
+
+.hunter-content-left h3 {
+    text-align: left;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    margin-left: 10px;
+}
+
+.hunter-content-left p {
+    padding-right: 20%;
+    font-size: 14px;
+    color: #666666;
+}
+
+.tips-line{
+    display:inline-block;
+    width: 10%;
+    height: 1px;
+    background-color: #dddddd;
+    margin-bottom: 7px;
+}
+
+@media screen and (max-width: 768px){
+    .hunter-content-right h3 {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .hunter-btn{
+        top:50%;
+        font-size:13px;
+    }
+
+    .hunter-content-right p {
+        padding: 0 10%;
+        margin-bottom: 20px;
+    }
+
+    .hunter-content-left h3 {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .hunter-content-left p {
+        padding: 0 10%;
+        margin-bottom: 20px;
+    }
+}

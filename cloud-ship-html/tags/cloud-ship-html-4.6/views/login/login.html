@@ -1,0 +1,228 @@
+<div class="loginBack">
+    <div class="container">
+    <div class="col-md-7 col-xs-12 login-img">
+        <img src="../../images/login/cloud-ship.png">
+    </div>
+    <!--登录-->
+    <div class="col-md-5 col-xs-12">
+        <div class="loginContainer">
+            <div>
+                <a ui-sref="app.login({loginMod:1})">
+                    <div class="col-xs-6 text-center login" ng-class="{loginAct:vm.params.loginMod == 2}">
+                        <span>用户登录</span>
+                    </div>
+                </a>
+                <a ui-sref="app.login({loginMod:2})">
+                    <div class="col-xs-6 text-center login"
+                         ng-class="{logonAct:vm.params.loginMod == 1}">
+                        <span>用户注册</span>
+                    </div>
+                </a>
+            </div>
+
+
+
+            <!--登录-->
+            <form ng-if="vm.params.loginMod == 1" class="padding-40" name="loginUpForm">
+                <div class="form-group margin-bottom-20">
+                    <input type="text" name="mobile" ng-pattern="/\d{11}/" class="loginInputTel form-control"
+                           placeholder="请输入手机号" ng-model='vm.loginUp.mobile' ng-blur="vm.registerPhone()"
+                           ng-minlength="11" maxlength="11" numberic required>
+                    <i class="loginTelImg"></i>
+                </div>
+                <div class="warning-red check-tips"
+                     ng-if="loginUpForm.mobile.$invalid && loginUpForm.mobile.$touched">
+                    请输入11位手机号码
+                </div>
+                <div class="form-group margin-bottom-40" style="margin-bottom:20px">
+                    <input type="password" name="password" class="loginInputPwd form-control"
+                           ng-model="vm.loginUp.pwd" ng-pattern="/^\w{6,16}$/" placeholder="密码"
+                           maxlength="16" minlength="6" required>
+                    <i class="loginPwdImg"></i>
+                </div>
+                <div class="warning-red check-psd" style="margin-top:-20px"
+                     ng-if="loginUpForm.password.$invalid && loginUpForm.password.$touched">
+                    请输入6-16位数字、字母或下划线组成的密码</div>
+
+
+                <div    ng-if="vm.checkTimes>4"
+                        style="width:100%;height: 40px;font-size: 0px;border: 1px solid #d9d9d9;border-radius: 0;margin-bottom:20px;">
+                    <input style="width:50%;height: 40px;font-size: 12px;display: inline-block;vertical-align:middle;padding-left:10px;"
+                            type="text" name="Captcha" placeholder="请输入图形验证码" ng-model="vm.Captcha"
+                            maxlength="4" ng-blur="checkCaptcha()" required="">
+                    <img    id="cap" class="captcha" style="width:50%;height: 40px;font-size: 12px;display: inline-block;vertical-align:middle;"
+                            style="-webkit-user-select: none"
+                            title="" src="ajax/a/captcha/generate" onclick="this.src = 'ajax/a/captcha/generate?'+new Date().getTime()">
+                </div>
+                <!--<div class="remind">-->
+                    <!--<strong class="register-remind">{{vm.registErrorTip}}</strong>-->
+                <!--</div>-->
+                <div class="form-group">
+                    <label class="pull-left padding-left-0 padding-right-0">
+                        <input type="checkbox" ng-model="vm.setCookie"/>
+                        <s id="cookie" ng-click="Cookie()" ng-class="{checked:vm.setCookie}" class="unchecked"></s>
+                        <span class="font12" style="vertical-align: text-top">记住用户名</span>
+                    </label>
+                    <!--<label class="pull-left padding-40">-->
+                        <!--<input type="checkbox"/>-->
+                        <!--<span class="font12" style="vertical-align: text-top">记住密码</span>-->
+                    <!--</label>-->
+                    <div class=pull-right>
+                        <a ng-click="toForgetPwd()" ui-sref="app.verifyTel"
+                           class=" text-right padding-left-0 padding-right-0 font12">忘记密码</a>
+                        <span>|</span>
+                        <a ui-sref="app.login({loginMod:2})"
+                           class=" font12">
+                            立即注册</a>
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-warning loginBtn margin-top-5 margin-bottom-20"
+                           value="登&nbsp&nbsp录"
+                            ng-click="vm.userLogin()"
+                            ng-disabled="vm.loginUp.mobile.length!=11||vm.loginUp.pwd == undefined" repeat-click>
+
+                </div>
+            </form>
+
+
+
+            <!--注册-->
+            <form ng-if="vm.params.loginMod == 2" name="ngForm" role="form" class="padding-40">
+                <div class="form-group" style="margin-bottom:0;">
+                    <input type="text" name="mobile" class="form-control loginInputTel"
+                           placeholder="请输入手机号" ng-model='vm.params.mobile' ng-blur="vm.registerPhone()"
+                           minlength="11" maxlength="11" numberic ng-pattern="/\d{11}/" required>
+
+                    <i class="loginTelImg"></i>
+                    <div style="min-height:15px;">
+                        <span class="warning-red" ng-if="ngForm.mobile.$invalid && ngForm.mobile.$touched">请输入11位手机号码</span>
+                        <span class="warning-red" ng-if="vm.unuseAble">此手机号已经被注册</span>
+                    </div>
+
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                    <div class="col-xs-7 padding-left-0">
+                        <input name="checkCode" type="text" placeholder="请输入验证码"
+                               class="form-control loginInputOrg loginVerify font12 text-center" ng-pattern="/\d{6}/"
+                               ng-model="vm.params.verify" minlength="6" maxlength="6" required>
+                        <i class="loginOrgImg"></i>
+                    </div>
+                    <div class="col-xs-5 padding-right-0 padding-left-0">
+                        <button type="button"
+                                class="btn btn-primary pull-right loginVerify loginVerifyBtn font12"
+                                ng-click="send.sendCode()"
+                                ng-disabled="send.canClick"
+                                value="重新发送" id="massage">
+                            <span ng-if="checkMessage">短信验证</span>
+                            <span ng-style="send.color" ng-if="!checkMessage">{{send.second}}</span>
+                            <span ng-if="!checkMessage">S后重新发送</span>
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div style="min-height:15px;">
+                                <span class="warning-red" ng-if="ngForm.checkCode.$invalid && ngForm.checkCode.$touched">请输入6位数字验证码</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <input type="password" class="form-control loginInputPwd"
+                           name="mima" placeholder="密码" ng-model="vm.params.password"
+                           minlength="6" maxlength="16" ng-pattern="/^\w{6,16}$/" required>
+                    <i class="loginPwdImg"></i>
+
+                    <div class="warning-red" ng-if="ngForm.mima.$invalid && ngForm.mima.$touched">
+                        请输入6-16位数字、字母或下划线组成的密码
+                    </div>
+                </div>
+                <div class="font12">
+                    <label>
+                        <input type="checkbox" name="accpet" ng-model="vm.accpet"
+                               ng-true-value="true" ng-false-value="false" required>
+                        <s ng-class="{checked:vm.accpet}"
+                           class="unchecked"
+                           ng-click="accpetRules()">
+                        </s>
+                        <span style="vertical-align: text-bottom">我已阅读并同意</span>
+                    </label>
+                    <a data-toggle="modal" data-target="#useprotocol"
+                       style="vertical-align: text-bottom">《草船云用户协议》</a>
+                    <span class="pull-right">
+                        <a ui-sref="app.login({loginMod:1})"
+                           class="font12">
+                        立即登录</a>
+                    </span>
+                </div>
+                <div class="form-group margin-bottom-20">
+                    <div class="warning-read" ng-if="!vm.accpet">请阅读用户协议</div>
+                    <input type="submit"
+                            value="注&nbsp&nbsp册"
+                            class="btn btn-warning loginBtn margin-top-5"
+                            ng-click="vm.register()" ng-disabled="ngForm.$invalid"  repeat-click>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+<div class=" container">
+    <div class="modal fade " id="useprotocol" tabindex="-1" role="dialog" aria-labelledby="useprotocol">
+        <div class="modal-dialog modal-lg deal" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+                    <h3 class="modal-title">草船云用户协议</h3>
+                </div>
+                <div class="modal-body margin-32">
+                    <p>欢迎使用草船云（caochuanyun.com）平台服务。请您认真阅读本协议的所有内容，如果您不同意该协议的任意条款，则不能获得使用草船云（caochuanyun.com）的服务、并不能享有注册成为草船云（caochuanyun.com）用户的权利。</p>
+                    <p class="text-indent">草船云（caochuanyun.com）有权在必要时修改服务条款，服务条款一旦发生变动，将会在重要页面上提示修改内容或通过其他形式告知会用户。如果用户不同意所改动的内容，可以主动取消获得的网络服务。如果用户继续享用网络服务，则视为接受服务条款的变动。</p>
+                    <h4>一、使用规则：</h4>
+                    <p class="text-indent">用户使用草船云（caochuanyun.com）平台在线申请服务并享有草船云（caochuanyun.com）网站上其他服务；用户注册成功后将享有一个账号和对应密码，用户必须保护好自己的帐号和密码，同时不得盗用他人帐号，并对由此行为造成的后果自负。因用户本人泄露信息而造成的任何损失由用户本人负责。</p>
+                    <p class="text-indent">本站用户禁止将本站用作从事各种非法活动的场所、平台或者其他任何形式的媒介。违反者若触犯法律，一切后果自负，本站不承担任何责任。</p>
+                    <p class="text-indent">本站用户不得利用本站危害国家安全、泄露国家秘密，不得侵犯国家社会集体的和公民的合法权益，不得利用本站制作、复制和传播包括但不限于下列信息：</p>
+                    <ul class="text-indent">
+                        <li>1、煽动抗拒、破坏宪法和法律、行政法规实施的；</li>
+                        <li>2、煽动颠覆国家政权，推翻社会主义制度的；</li>
+                        <li>3、煽动分裂国家、破坏国家统一的；</li>
+                        <li>4、煽动民族仇恨、民族歧视，破坏民族团结的；</li>
+                        <li>5、捏造或者歪曲事实，散布谣言，扰乱社会秩序的；</li>
+                        <li>6、宣扬封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪的；</li>
+                        <li>7、公然侮辱他人或者捏造事实诽谤他人的，或者进行其他恶意攻击的；</li>
+                        <li>8、损害国家机关信誉的；</li>
+                        <li>9、其他违反宪法和法律行政法规的；</li>
+                    </ul>
+                    <h4>二、隐私政策：</h4>
+                    <p class="text-indent">您注册草船云（caochuanyun.com）相关服务时，跟据网站要求提供相关个人信息；在您使用草船云（caochuanyun.com）服务、参加网站活动、或访问网站网页时，网站自动接收并记录的您浏览器上的服务器数据，包括但不限于IP地址、网站Cookie中的资料及您要求取用的网页记录；为服务用户的目的，草船云（caochuanyun.com）可能通过使用您的个人信息，向您提供服务，包括但不限于向您发出活动和服务信息等。</p>
+                    <p class="text-indent">草船云（caochuanyun.com）以此声明对本站用户隐私保护的许诺。技能树（jnshu.com）非常重视对用户隐私权的保护，承诺不会在未获得用户许可的情况下擅自将用户的个人资料信息出租或出售给任何第三方，但以下情况除外：</p>
+                    <ul class="text-indent">
+                        <li>1、经您同意，向第三方披露；</li>
+                        <li>2、经您同意，为提供你所要求的产品和服务，而必须和第三方分享您的个人信息；</li>
+                        <li>3、根据法律的有关规定，或者行政或司法机构的要求，向第三方或者行政、司法机构披露；</li>
+                        <li>4、如果您出现违反中国有关法律或者网站政策的情况，需要向第三方披露。</li>
+                    </ul>
+                    <h4>三、责任声明：</h4>
+                    <p class="text-indent">草船云（caochuanyun.com）不保证网络服务一定能满足用户的要求，也不保证网络服务不会中断，对网络服务的及时性、安全性、准确性也都不作保证。任何由于黑客攻击、计算机病毒侵入或发作、政府管制、硬件故障、不可抗力造成的用户个人资料泄露、丢失、被盗用、被篡改或服务暂定或终止的，对注册用户所造成的风险或损失，草船云（caochuanyun.com）均可免责。用户应当自行承担一切因自身行为而直接或者间接导致的民事或刑事法律责任。</p>
+                    <p class="text-indent"> 用户同意保障和维护草船云（caochuanyun.com）及其他用户的利益，由于用户发表内容违法、不真实、不正当、侵犯第三方合法权益，或用户违反本协议项下的任何条款而给草船云（caochuanyun.com）或任何其他第三人造成损失，用户同意承担由此造成的损害赔偿责任。</p>
+                    <p class="text-indent">本站内相关信息内容仅代表发布者的个人观点，并不表示本站赞同其观点或证实其描述，本站不承担由此引发的法律责任。</p>
+                    <p class="text-indent">若草船云（caochuanyun.com）已经明示其网络服务提供方式发生变更并提醒用户应当注意事项，用户未按要求操作所产生的一切后果由用户自行承担。</p>
+                    <p class="text-indent">草船云（caochuanyun.com）有权但无义务，改善或更正本网站任何部分之任何疏漏、错误。</p>
+                    <h4>四、解释权：</h4>
+                    <p class="text-indent">上述条款的最终解释权在法律允许的范围内草船云（caochuanyun.com）所有。</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" ng-click="vm.accpet=true" data-dismiss="modal">接受</button>
+                    <button type="button" class="btn btn-default" ng-click="vm.accpet=false" data-dismiss="modal">拒绝</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>

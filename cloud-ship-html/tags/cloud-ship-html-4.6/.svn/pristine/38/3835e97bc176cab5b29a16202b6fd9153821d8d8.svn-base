@@ -1,0 +1,114 @@
+<h4 class="user-title">公司信息</h4>
+<div class="companyEdit-padding">
+    <form name="companyForm" novalidate>
+        <ul>
+            <li>
+                <div class="com-logo">公司logo</div>
+                <div class="companyEdit-wrapper cursor-pointer">
+                    <simple-upload-box></simple-upload-box>
+                </div>
+            </li>
+            <li>
+                <span>公司名称</span>
+                <input class="companyEdit-input"
+                       ng-model="vm.company.cname"
+                       type="text"
+                       placeholder="必填项"
+                       required/>
+                <span class="warning-red">*</span>
+            </li>
+            <li>
+                <span>公司网址</span>
+                <input class="companyEdit-input" ng-model="vm.company.website" type="text"/>
+            </li>
+            <li>
+                <span>公司电话</span>
+                <input class="companyEdit-input"
+                       ng-model="vm.company.mobile"
+                       name="comPhone"
+                       placeholder="必填项"
+                       required/>
+            <span class="warning-red">*</span>
+            </li>
+            <li>
+                <span>行业类型</span>
+                <select
+                        class="companyEdit-input"
+                        ng-model="vm.company.industry">
+                    <option value="" selected>全部&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+                    <option value="1" ng-checked="vm.company.industry==1">
+                        IT/互联网&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+                    <option value="2" ng-checked="vm.company.industry==2">
+                        媒体&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+                    <option value="3" ng-checked="vm.company.industry==3">
+                        金融&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+                </select>
+                <!--<input class="companyEdit-input" type="text" ng-model="vm.company.industry" placeholder="所属行业"/>-->
+            </li>
+            <li>
+                <span>公司阶段</span>
+                <select class="companyEdit-input" ng-model="vm.company.stage">
+                    <option value="">全部</option>
+                    <option value="1">初创型</option>
+                    <option value="2">成长型</option>
+                    <option value="3">成熟型</option>
+                    <option value="4">已上市</option>
+
+                </select>
+            <li>
+                <span class="pull-left">公司简介</span>
+            <textarea class="companyEdit-text" maxlength="100" ng-model="vm.company.profile"
+                      placeholder="限100字以内"></textarea>
+            </li>
+            <li>
+                <span class="pull-left">关于企业</span>
+            <textarea class="companyEdit-text" maxlength="100" ng-model="vm.company.details"
+                      placeholder="限100字以内"></textarea>
+            </li>
+            <li>
+                <span class="pull-left">相关服务</span>
+            <textarea class="companyEdit-text" maxlength="300" ng-model="vm.company.servers"
+                      placeholder="相关服务  限300字以内"></textarea>
+            </li>
+            <li>
+                <span class="pull-left">服务优势</span>
+            <textarea class="companyEdit-text" maxlength="300" ng-model="vm.company.advantage"
+                      placeholder="服务优势  限300字以内"></textarea>
+            </li>
+            <li>
+                <div class="com-logo">宣传图</div><span  style="margin-left:5px"></span>
+                <simple-upload-div></simple-upload-div>
+                <div style="font-size: 12px; color:red; padding-left: 80px;">(*宣传图标准尺寸是1200px*350px，请上传标准尺寸图片或等比例图片)</div>
+            </li>
+
+            <li class="companyEdit-btn">
+                <button class="btn orange-btn companyEdit-btn-left" ng-click="vm.goUpdateCompany()"
+                        ng-disabled="companyForm.$invalid">保存
+                </button>
+                <button ui-sref="app.user.company" class="white-btn companyEdit-btn-right">取消</button>
+            </li>
+        </ul>
+    </form>
+</div>
+
+
+<!-- 模态框（Modal） -->
+<script id="myModal.html" type="text/ng-template">
+    <div class="modal-dialog">
+        <div class="modal-content success-modal">
+            <div class="modal-header1 success-modal-title">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    提示
+                </h4>
+            </div>
+            <div class="modal-body success-modal-text">
+                <img src="../../images/user/success.png">
+                <h4>&nbsp;&nbsp;&nbsp;申请成功！</h4>
+                <p>我们将在3个工作日内给您回复</p>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</script>

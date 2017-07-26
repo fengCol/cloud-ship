@@ -1,0 +1,30 @@
+<div class="user-forService-title">
+    <h4 class="user-title">提供服务</h4>
+    <button  class="btn orange-btn addServicesBtn" ng-click="vm.goAdd()">新增</button>
+</div>
+
+<div class="user-service-tab">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th style="min-width: 75px;">提供服务</th>
+                <th>优惠政策</th>
+                <th style="min-width: 45px;">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in vm.services">
+                <td>{{x.sname}}-{{x.ssonname}}</td>
+                <td>{{x.favo|stageString}}</td>
+                <td ui-sref="app.user.addServices({csid:x.csid})"><span
+                        class="checkserver">查看</span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <pagination-user ng-if="vm.total" total="{{vm.total}}"></pagination-user>
+
+
+
+</div>

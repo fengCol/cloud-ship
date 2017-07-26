@@ -1,0 +1,283 @@
+<!--banner start-->
+<div class="banner">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listBox">
+            <div class="item active">
+                <img src="../images/banner-1.jpg" alt="1">
+            </div>
+            <div class="item">
+                <img src="../images/banner-2.jpg" alt="2">
+            </div>
+            <div class="item">
+                <img src="../images/banner-3.jpg" alt="3">
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control"  style="background-image: none"  href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="banner-pre" aria-hidden="true">
+                    <img src="../images/banner-pre.png" class="img-responsive" alt="pre">
+                </span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" style="background-image: none" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="banner-next" aria-hidden="true">
+                    <img src="../images/banner-next.png" class="img-responsive" alt="next">
+                </span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<div class="clearFloat"></div>
+<!--banner over-->
+
+
+<!--advantage start-->
+<div class="feature">
+    <div class="container">
+        <div class="row">
+            <div class="feature-card col-md-3 col-sm-6 col-xs-12">
+                <img src="../images/money.png" alt="money">
+                <p>价格低</p>
+            </div>
+            <div class="feature-card col-md-3 col-sm-6 col-xs-12">
+                <img src="../images/plane.png" alt="plane">
+                <p>周期短</p>
+            </div>
+            <div class="feature-card col-md-3 col-sm-6 col-xs-12">
+                <img src="../images/cup.png" alt="cup">
+                <p>更专业</p>
+            </div>
+            <div class="feature-line hidden-xs">
+                <img src="../images/line.jpg">
+            </div>
+            <div class="feature-card-right col-md-3 col-sm-6 col-xs-12">
+                <span style="font-size: 20px; margin-bottom: 10px; display: inline-block">{{vm.totalCompany}}</span><br>
+                <p>企业与草船云有合作</p>
+                <span style="font-size: 20px; margin-bottom: 10px; display: inline-block">{{vm.totalCSRelation}}</span><br>
+                <p>草船云已服务企业</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--advantage over-->
+
+<!--Service start-->
+<div class="home-gray">
+    <div class="container">
+        <div class="row">
+            <div class="home-title text-center">
+                <span class="tips-line"></span>
+                <h2 class="tips-title">一站式创业服务体系</h2>
+                <span class="tips-line"></span>
+            </div>
+            <div class="home-tips">
+                <p class="text-center">
+                    草船云致力于为创业者提供一个集成法务对接、工商注册、 创业问诊，产品开发，人力资源，项目融资等服务的生态体系
+                </p>
+            </div>
+        </div>
+        <div class="pioneeringService text-center row">
+            <div>
+                <img  src="../images/home/home-icon1.png" alt="">
+                <!-- <span style="position: absolute;left: 37%;top: 60%;color: #4ea4fe;font-size: 1rem">工商注册</span> -->
+            </div>
+            <span><img src="../images/home/home-point.png" alt=""></span>
+
+            <div>
+                <img src="../images/home/home-icon2.png" alt="">
+                <!-- <span style="position: absolute;left: 37%;top: 60%;color: #4ea4fe;font-size: 1rem">财务税务</span> -->
+            </div>
+            <span><img src="../images/home/home-point.png" alt=""></span>
+
+            <div>
+                <img src="../images/home/home-icon3.png" alt="">
+                <!-- <span style="position: absolute;left: 37%;top: 60%;color: #4ea4fe;font-size: 1rem">办公场地</span> -->
+            </div>
+            <span><img src="../images/home/home-point.png" alt=""></span>
+
+            <div>
+                <img src="../images/home/home-icon4.png" alt="">
+                <!-- <span style="position: absolute;left: 37%;top: 60%;color: #4ea4fe;font-size: 1rem">人力资源</span> -->
+            </div>
+
+            <span class="visible-md visible-lg home-icon-down"><img src="../images/home/home-point.png" alt=""></span>
+
+            <div>
+                <img src="../images/home/home-icon8.png" alt="">
+                <!-- <span style="position: absolute;left: 37%;top: 60%;color: #4ea4fe;font-size: 1rem">运营推广</span> -->
+            </div>
+            <span class="home-icon-left"><img src="../images/home/home-point.png" alt=""></span>
+            <div>
+                <img src="../images/home/home-icon7.png" alt="">
+                <!-- <span style="position: absolute;left: 37%;top: 60%;color: #4ea4fe;font-size: 1rem">项目融资</span> -->
+            </div>
+            <span class="home-icon-left"><img src="../images/home/home-point.png" alt=""></span>
+            <div>
+                <img src="../images/home/home-icon6.png" alt="">
+                <!-- <span style="position: absolute;left: 40%;top: 60%;color: #4ea4fe;font-size: 1rem">云服务</span> -->
+            </div>
+            <span class="home-icon-left"><img src="../images/home/home-point.png" alt=""></span>
+            <div>
+                <img src="../images/home/home-icon5.png" alt="">
+                <!-- <span style="position: absolute;left: 37%;top: 60%;color: #4ea4fe;font-size: 1rem">产品开发</span> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="home-title text-center">
+            <span class="tips-line"></span>
+            <h2>专业的人才推荐服务</h2>
+            <span class="tips-line"></span>
+        </div>
+        <div class="home-tips">
+            <p class="text-center">
+                独具特色的人才推荐服务 <br>
+                我们专注为企业提供高品质、全方位的中高端人才解决方案
+            </p>
+        </div>
+    </div>
+    <div class="home-personnel text-center row">
+        <div class="col-md-2  col-sm-6  col-xs-6 col-lg-offset-1 col-md-offset-1">
+            <img src="../images/home/home-personnel1.png" alt="">
+            <p>全职业覆盖</p>
+        </div>
+        <div class="col-md-2 col-sm-6  col-xs-6">
+            <img src="../images/home/home-personnel2.png" alt="">
+            <p>免费评测</p>
+        </div>
+        <div class="col-md-2 col-sm-6  col-xs-6">
+            <img src="../images/home/home-personnel3.png" alt="">
+            <p>背景调查</p>
+        </div>
+        <div class="col-md-2 col-sm-6  col-xs-6">
+            <img src="../images/home/home-personnel4.png" alt="">
+            <p>灵活收费</p>
+        </div>
+        <div class="col-md-2 col-sm-12 col-xs-12">
+            <img src="../images/home/home-personnel5.png" alt="">
+            <p>定向培训</p>
+        </div>
+    </div>
+</div>
+
+<div class="home-blue">
+    <div class="container">
+        <div class="row">
+            <div class="home-title text-center">
+                <span class="tips-line"></span>
+                <h2 style="margin-bottom: 20px">提供创业者技术的VC投资</h2>
+                <span class="tips-line"></span>
+            </div>
+            <div class="home-tips">
+                <p style="margin-bottom: 30px" class="text-center home-blue tips-explin">
+                    以现金+股份的形式达成双赢的合作 <br>
+                    开发团队由搜狐白社会主力成员组成 ，联想顶级系统架构师提供技术解决方案
+                </p>
+            </div>
+        </div>
+        <div class="home-invest row text-center">
+            <div style="position: relative;" class="home-invest-card">
+                <img src="../images/home/home-invest1.png" alt="">
+                <span style="position: absolute;top: 60%;font-size: 14px"  class="pos1">创业资讯</span >
+            </div>
+            <div style="position: relative;" class="home-invest-card">
+                <img src="../images/home/home-invest2.png" alt="">
+                <span style="position: absolute;top: 60%;font-size: 14px"  class="pos1">产品设计</span >
+            </div>
+            <div style="position: relative;" class="home-invest-card">
+                <img src="../images/home/home-invest3.png" alt="">
+                <span style="position: absolute;top: 60%;font-size: 14px"  class="pos1">架构搭建</span >
+            </div>
+            <div style="position: relative;" class="home-invest-card">
+                <img src="../images/home/home-invest4.png" alt="">
+                <span style="position: absolute;top: 60%;font-size: 14px"  class="pos1">敏捷开发</span >
+            </div>
+            <div style="position: relative;" class="home-invest-card">
+                <img src="../images/home/home-invest5.png" alt="">
+                <span style="position: absolute;top: 60%;font-size: 14px"  class="pos2">测试&部署</span >
+            </div>
+            <div style="position: relative;" class="home-invest-card">
+                <img src="../images/home/home-invest6.png" alt="">
+                <span style="position: absolute;top: 60%;font-size: 14px"  class="pos1">运营维护</span >
+            </div>
+            <div style="position: relative;" class="home-invest-card">
+                <img src="../images/home/home-invest7.png" alt="">
+                <span style="position: absolute;top: 60%;font-size: 14px"  class="pos1">团队建设</span >
+            </div>
+            <div style="position: relative;" class="home-invest-card">
+                <img src="../images/home/home-invest8.png" alt="">
+                <span style="position: absolute;top: 60%;font-size: 14px"  class="pos1">人事管理</span >
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="home-title text-center">
+            <span class="tips-line"></span>
+            <h2>合作伙伴</h2>
+            <span class="tips-line"></span>
+        </div>
+    </div>
+    <div class="row home-partner">
+        <div>
+            <img src="../images/hatch/hatch-logo-12.png" alt="">
+        </div>
+        <div>
+            <img src="../images/hatch/hatch-logo-13.png" alt="">
+        </div>
+        <div>
+            <img src="../images/hatch/hatch-logo-14.png" alt="">
+        </div>
+        <div>
+            <img src="../images/hatch/hatch-logo-15.png" alt="">
+        </div>
+        <div>
+            <img src="../images/hatch/hatch-logo-16.png" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="home-gray">
+    <div class="container">
+        <div class="row">
+            <div class="home-title text-center">
+                <span class="tips-line"></span>
+                <h2 style="margin-top: 40px">创业百宝箱</h2>
+                <span class="tips-line"></span>
+            </div>
+        </div>
+        <div class="row home-linkbox">
+            <ul class="col-md-2 col-xs-4" ng-repeat="buslist in vm.parentList | limitTo:5">
+                <li style="font-weight: bold" ui-sref="app.businessService({index:$index})">{{buslist.name}}</li>
+                <li ng-repeat="nextlist in buslist.data" >
+                    <a href="" class="home-linkbox-item" ui-sref="app.businessService({cid:buslist.id,id:nextlist.id,index:$parent.$index})">
+                        {{nextlist.name}}
+                    </a>
+                </li>
+            </ul>
+            <!--<ul class="col-md-2 col-xs-4">-->
+                <!--<li style="font-weight: bold" ng-repeat="finacelist in vm.parentList">{{finacelist.name}}</li>-->
+                <!--<li>-->
+                    <!--<a href=""-->
+                       <!--ui-sref="app.link({group:'项目融资',serverId:finacelist.id,-->
+                       <!--nextserverName:finacelist.name,nextserverId:0})">-->
+
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        </div>
+    </div>
+</div>

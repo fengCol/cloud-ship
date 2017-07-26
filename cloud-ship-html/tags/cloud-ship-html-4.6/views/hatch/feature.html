@@ -1,0 +1,38 @@
+<div class="hatch-view">
+    <img src="../../images/hatch/feature/feature.png" style="width:100%">
+    <div>
+        <div class="feature-title">丰富的组件库</div>
+        <div class="feature-info">草船云公司在技术开发的系统中默认包含这些功能。这也是远远超出了大多数传统外包团队的因素之一。而且，功能列表在不断完善中。</div>
+    </div>
+    <div id="navHeight">
+        <div id="nav-wrap"  class="type-nav">
+            <span class="type-name">组件类型：</span>
+            <span ng-repeat="li in vm.productList" class="featrue-button">
+            <button type="button" ng-class="{'active': vm.id == li.id}" ng-click="vm.getList(li.id)">{{li.name}}</button>
+            </span>
+        </div>
+    </div>
+    <div ng-repeat="(x,y) in vm.componentListJson">
+        <p class="component-name">{{y.name}}</p>
+        <table>
+            <thead>
+            <tr>
+                <th style="width: 10%;font-size: 14px;">序号</th>
+                <th style="width: 20%;font-size: 14px;">组件名</th>
+                <th style="width: 50%;font-size: 14px;">组件介绍</th>
+                <th style="width: 10%;font-size: 14px;">标准版</th>
+                <th style="width: 10%;font-size: 14px;">白金版</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="(key,val) in y.children">
+                <td style="font-size: 14px;">{{$index+1}}</td>
+                <td style="font-size: 14px;">{{val.name}}</td>
+                <td style="font-size: 14px;">{{val.detail}}</td>
+                <td style="font-size: 14px;"><i ng-class="{true:'checked',false:'unchecked'}[val.edition === 0 || val.edition == 2]"></i></td>
+                <td style="font-size: 14px;"><i ng-class="{true:'checked',false:'unchecked'}[val.edition == 1 || val.edition == 2]"></i></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

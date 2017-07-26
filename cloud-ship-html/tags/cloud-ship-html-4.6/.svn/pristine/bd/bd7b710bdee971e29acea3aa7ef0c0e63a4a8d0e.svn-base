@@ -1,0 +1,212 @@
+<div class="wrap">
+    <div class="hatch-header text-center">
+
+            <img style="z-index:2" src="../images/hatch/hatch.png" style="width:100%;">
+        <h1 class="hidden-xs hidden-sm"><span>现金+股份</span>双赢模式</h1>
+        <h1 class="hidden-xs hidden-sm">专为<span>创业者</span>量身打造</h1>
+        <!--<input type="button"-->
+               <!--value="立即申请"-->
+               <!--class="hunter-btn orange-btn">-->
+               <!--&lt;!&ndash;ng-click="vm.loginGO()" &ndash;&gt;-->
+    </div>
+
+
+    <div class=" hatch-main ">
+        <!--技术合伙人开始-->
+        <div class="" style="background: #f8f8f8">
+            <div class="container">
+                <h1 class="col-md-12 text-center">我们是创业者技术的合伙人</h1>
+                <p class="col-md-12 text-center">开发团队由搜狐白社会主力成员组成 ，联想顶级系统架构师提供技术解决方案</p>
+                <div class="col-md-12 text-center hatch-partner">
+                    <div class="col-md-3 col-sm-6">
+                        <img src="../images/hatch/hatch-logo-1.png" alt="">
+                        <h4>项目咨询</h4>
+                        <p>草船云为您提供免费的项目咨询，交流项目风险，规划项目周期。</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <img src="../images/hatch/hatch-logo-2.png" alt="">
+                        <h4>产品分析</h4>
+                        <p>专业的产品经理及UI设计师帮助团队完成初期的产品设计和UI设计。</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <img src="../images/hatch/hatch-logo-3.png" alt="">
+                        <h4>架构设计</h4>
+                        <p style="padding: 0 15px">专业的架构设计服务，为快速响应需求变换打下良好的基础。</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <img src="../images/hatch/hatch-logo-4.png" alt="">
+                        <h4>敏捷开发</h4>
+                        <p>以敏捷开发的形式高效迭代，多达50人的项目敏捷并行经验。</p>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center hatch-partner">
+                    <div class="col-md-3 col-sm-6">
+                        <img src="../images/hatch/hatch-logo-5.png" alt="">
+                        <h4>测试&部署</h4>
+                        <p style="padding: 0 15px">提供性能测试报告，以及服务部署说明，实时跟进项目进度。</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <img src="../images/hatch/hatch-logo-6.png" alt="">
+                        <h4>运维维护</h4>
+                        <p>提供专业的运维维护服务，随时应对线上出现的异常情况。</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <img src="../images/hatch/hatch-logo-7.png" alt="">
+                        <h4>团队组建</h4>
+                        <p>帮助创业者组织团队，提供团队架构预算，快速帮助创业者组建团队。</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <img src="../images/hatch/hatch-logo-8.png" alt="">
+                        <h4>人事管理</h4>
+                        <p>专业HR顾问，帮助创业者进行面试及员工管理，促进团队快速磨合。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--技术合伙人结束-->
+
+        <!--收费模式开始-->
+        <div>
+            <div class="container">
+                <h1 class="col-md-12 text-center">独具特色的收费模式</h1>
+                <p class="col-md-12 text-center">以现金+股份的形式达成双赢的合作</p>
+                <div class="col-md-12 text-center hatch-module">
+                    <div class="col-md-4">
+                        <img src="../images/hatch/hatch-logo-9.png" alt="">
+                        <h4>形式：股份＋现金</h4>
+                        <p>以现金+股份的形式达成双赢的合作，现金的部分保证创业者对于项目的投入的积极性，股份的部分保证我们尽力将项目做好。</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="../images/hatch/hatch-logo-10.png" alt="">
+                        <h4>周期：1.5个月左右</h4>
+                        <p>以一个半月左右的周期，五到六人的小Team开发，依据项目的不同，现金的比例在8~14万之间，股份的价值也在8~14万之间。</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="../images/hatch/hatch-logo-11.png" alt="">
+                        <h4>回购：灵活方便</h4>
+                        <p>一般而言，如果有意向，当创业者获取下一轮融资时，就可以将股份全部或者是部分回购。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--收费模式结束-->
+
+        <!--顾问开始-->
+        <div style="background: #f8f8f8">
+            <div class="container">
+                <h1 class="col-md-12 text-center" >顶尖顾问</h1>
+                <p class="col-md-12 text-center">阿里巴巴、搜狐、极路由、乐视、京东</p>
+                <p class="col-md-12 text-center" style="margin-bottom:2rem">等顶级顾问为产品开发保驾护航</p>
+                <div class="container friend-box">
+                    <!--轮播-->
+                    <jqcarouse></jqcarouse>
+                </div>
+            </div>
+        </div>
+        <!--顾问结束-->
+        <div class="">
+            <div class="container">
+
+                <!--合作伙伴开始-->
+                <h1 class="col-md-12 text-center">合作伙伴</h1>
+                <div class=" text-center hatch-mate">
+                    <div class="width-2">
+                        <img src="../images/hatch/hatch-logo-12.png" alt="">
+                    </div>
+                    <div class="width-2">
+                        <img src="../images/hatch/hatch-logo-13.png" alt="">
+                    </div>
+                    <div class="width-2">
+                        <img src="../images/hatch/hatch-logo-14.png" alt="">
+                    </div>
+                    <div class="width-2">
+                        <img src="../images/hatch/hatch-logo-15.png" alt="">
+                    </div>
+                    <div class="width-2">
+                        <img src="../images/hatch/hatch-logo-16.png" alt="">
+                    </div>
+                </div>
+                <!--合作伙伴结束-->
+
+                <!--梦想等待开始-->
+                <h1 class="col-md-12 text-center">梦想正在等待，你还要等多久</h1>
+                <div class="experience" id="experience">
+                    <div id="success-case" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#success-case" data-slide-to="0" class="active"></li>
+                            <li data-target="#success-case" data-slide-to="1"></li>
+                        </ol>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="col-lg-12 clear-pd item active">
+                                <div class="col-lg-4 col-md-4 col-sm-12 clear-pd success-case-left">
+                                    <img src="../images/zhaohugong-2.jpg">
+                                    <h1>找护工</h1>
+                                    <p class="hide-p">
+                                        Android项目，为护工雇主和护工提供双向选择。
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 clear-pd success-case-middle">
+                                    <img src="../images/car-finance-2.jpg">
+                                    <h1>汽车金融</h1>
+                                    <p class="hide-p">
+                                        Android项目，为客户提供汽车类金融服务。
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 clear-pd success-case-right">
+                                    <img src="../images/51-2.jpg">
+                                    <h1>51包装网</h1>
+                                    <p class="hide-p">
+                                        Web项目，纸盒包装盒在线订购平台，当当网，凡客诚品等电商合作商家。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 clear-pd item">
+                                <div class="col-lg-4 col-md-4 col-sm-12 clear-pd success-case-left">
+                                    <img src="../images/jianjia-2.jpg">
+                                    <h1>蒹葭</h1>
+                                    <p class="hide-p">
+                                        iOS项目，通过APP将搭配师和客户连接在一起。APP内包括天气，地图，图片，即时通讯，在线支付等。
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-4 col-md-12 col-sm-12 clear-pd success-case-middle">
+                                    <img src="../images/shuizhan-2.jpg">
+                                    <h1>喝我</h1>
+                                    <p class="hide-p">
+                                        Android项目，送水工和客户双平台；客户可以在线订购桶装水，送水工可以在线抢单，结算。
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 clear-pd success-case-right">
+                                    <img src="../images/qingqing.png">
+                                    <h1>柏利天</h1>
+                                    <p class="hide-p">
+                                        Web项目，专注于打造消费返利的综合性电商平台；基于商家资源整合、为用户提供线上线下360°返利服务。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#success-case" role="button" data-slide="prev">
+                <span class="banner-pre" aria-hidden="true">
+                    <img src="../images/pre-2.png" class="img-responsive" alt="pre">
+                </span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#success-case" role="button" data-slide="next">
+                <span class="banner-next" aria-hidden="true">
+                    <img src="../images/next-2.png" class="img-responsive" alt="next">
+                </span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <input type="button" value="查看更多" class="btn-Check" ui-sref="app.case">
+                </div>
+                <!--梦想等待结束-->
+            </div>
+        </div>
+    </div>
+</div>
+
+

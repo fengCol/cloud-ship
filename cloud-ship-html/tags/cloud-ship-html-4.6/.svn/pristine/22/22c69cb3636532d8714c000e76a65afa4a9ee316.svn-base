@@ -1,0 +1,59 @@
+
+
+<div class="mis-stage" >
+    <!-- The element to select and apply miSlider to - the class is optional -->
+    <ol class="mis-slider">
+        <!-- The slider element - the class is optional -->
+        <li class="mis-slide">
+            <!-- A slide element - the class is optional -->
+            <a href="#" class="mis-container">
+                <!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+
+                <p>11111</p>
+
+            </a>
+        </li>
+        <li class="mis-slide">
+            <a href="#" class="mis-container">
+
+                <p>222222</p>
+
+            </a>
+        </li>
+        <li class="mis-slide">
+            <a href="#" class="mis-container">
+
+                <p>3333333</p>
+
+            </a>
+        </li>
+        <li class="mis-slide">
+            <a href="#" class="mis-container">
+
+                <p>4444444</p>
+
+            </a>
+        </li>
+        <li class="mis-slide">
+            <a href="#" class="mis-container">
+
+                <p>555555</p>
+
+            </a>
+        </li>
+        <li class="mis-slide">
+            <a href="#" class="mis-container">
+
+                <p>6666666</p>
+
+            </a>
+        </li>
+        <li class="mis-slide">
+            <a href="#" class="mis-container">
+
+                <p>777777777</p>
+
+            </a>
+        </li>
+    </ol>
+</div>

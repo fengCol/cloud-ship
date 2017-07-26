@@ -1,0 +1,87 @@
+<div class="loginWrap">
+    <div class="container">
+        <div class="panel margin-bottom-0">
+            <div class="panel-heading header">
+                <div class="panel-title "><img src="../../images/login/line.png">找回密码</div>
+            </div>
+            <div class="panel-body text-center">
+                <ul class="list-inline row step">
+                    <li>
+                        <ul class="list-inline">
+                            <li class="hexagon"><img src="../../images/login/hexagon.png"/><p>1</p></li>
+                            <li class="stepActive">验证手机号</li>
+                            <li class="line"></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="list-inline">
+                            <li class="hexagon"><img src="../../images/login/hexagon.png"/><p>2</p></li>
+                            <li class="stepActive">输入新密码</li>
+                            <li class="line"></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="list-inline">
+                            <li class="hexagon"><img src="../../images/login/hexagon-grey.png"/><p>3</p></li>
+                            <li class="unActive">完成</li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="form-horizontal" name="verifyimg" novalidate>
+                    <div class="col-md-7 col-xs-12 col-md-offset-2 col-sm-offset-2">
+                        <div class="form-group">
+                            <label class="control-label col-xs-3 hidden-xs">输入新密码</label>
+                            <div class="col-md-8 col-xs-12 padding-left-9">
+                                <input type="password" placeholder="请输入由数字或字母组成的6-16位密码"
+                                       name="newPwd"
+                                       ng-model="vm.params.newpwd"
+                                       class="form-control margin-bottom-10 radius-0"
+                                       ng-minlength="6"
+                                       maxlength = "16"
+                                       ng-pattern="/^\w{6,16}$/"
+                                       required>
+                                <div style="min-height:12px;" class="text-left" >
+                                    <p class="error">
+                                    <span>
+                        <!--<span ng-show="verifyimg.newPwd.$invalid&&verifyimg.newPwd.$error.minlength">*密码长度不小于6</span>-->
+                        <span ng-show="verifyimg.newPwd.$dirty && verifyimg.newPwd.$invalid">*请输入由数字和字母组成的6-16位密码</span>
+                   </span>
+                                    </p>
+                                </div>
+
+                                <!--<div class="verifyImg-error" ng-messages="verifyimg.newPwd.$error"  ng-show="verifyimg.newPwd.$touched">
+                                    <div ng-message="required">内容不能为空</div>
+                                    <div ng-message="pattern">请输入由数字和字母组成的6-16位密码</div>
+                                </div>-->
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-3 hidden-xs">确认新密码</label>
+                            <div class="col-md-8 col-xs-12 padding-left-9">
+                                <input type="password" placeholder="请再次输入新密码" class="form-control margin-bottom-10 radius-0" ng-model="vm.rePwd" maxlength="16" name="verifyimgcode" required>
+                                <p class="error" style="min-height:12px;text-align: left">
+                                    <!--<span class="error" ng-show="verifyimg.password.$valid&&verifyimg.verifyimgcode.$dirty">-->
+                                    <span ng-show="vm.rePwd != vm.params.newpwd">*两次密码输入不一致</span>
+                                    </span>
+                                </p>
+                            </div>
+
+                    <!--<span>-->
+                        <!--<span ng-show="verifyimg.password.$invalid&&verifyimg.password.$error.minlength">*密码长度不小于6</span>-->
+                        <!--<span ng-show="verifyimg.password.$invalid&&verifyimg.password.$error.maxlength">*密码长度不超过16</span>-->
+                   <!--</span>-->
+                        </div>
+                        <div class="margin-bottom-202">
+                            <button
+                                    class="btn btn-warning col-md-8 col-xs-12 col-md-offset-3 col-sm-offset-3 radius-0"
+                                    ng-disabled="verifyimg.$invalid || vm.rePwd != vm.params.newpwd"
+                                    ng-click = "vm.newCode()">
+                                下一步</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

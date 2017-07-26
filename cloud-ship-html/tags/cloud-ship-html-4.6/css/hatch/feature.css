@@ -1,0 +1,130 @@
+/*标题文字*/
+.feature-title{
+    width:353px;
+    padding: 0 20px 0;
+    margin: 40px auto;
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 2px;
+    border-left: 90px solid #e3e3e3;
+    border-right: 90px solid #e3e3e3;
+    text-align: center;
+}
+
+@media (max-width:500px){
+    .feature-title{
+        padding: 0 20px 0;
+        margin: 40px auto;
+        font-size: 2.2rem;
+        font-weight: bold;
+        line-height: 2px;
+        text-align: center;
+    }
+}
+
+.feature-info{
+    margin-bottom: 20px;
+    padding: 0 0 0 20px;
+    font-size: 1.5rem;
+}
+/*导航栏*/
+.type-nav{
+    width: 100%;
+    padding: 0 10px;
+    background-color: #fff;
+    font-size: 1.6rem;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px
+}
+
+.type-name{
+    margin-right: 30px;
+}
+
+.type-nav button{
+    margin-right: 10px;
+    padding: 20px 5px;
+    background-color:#fff ;
+    border: none;
+}
+
+.nav-fix{
+    position: fixed;
+    top:0;
+    width:965px;
+}
+
+@media (max-width:1080px) and (min-width: 892px) {
+    .nav-fix{
+        position: fixed;
+        top:0;
+        width:798px;
+    }
+}
+
+@media (max-width:892px) and (min-width: 695px) {
+    .nav-fix{
+        position: fixed;
+        top:0;
+        width:740px;
+    }
+}
+
+.featrue-button button:hover{
+    color: #4ea4fe;
+    border-bottom: 2px solid #4ea4fe;
+}
+
+.featrue-button button.active{
+    color: #4ea4fe;
+    border-bottom: 2px solid #4ea4fe;
+}
+
+/*组件列表*/
+.component-name{
+    margin: 17px 0;
+    padding-left: 7px;
+    font-size: 1.4rem;
+    border-left: 4px solid #4ea4fe;
+}
+
+table{
+    width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    background-color: #fff;
+}
+
+th,td{
+    padding: 1%;
+    text-align: center;
+}
+
+th {
+    border: 1px solid #e8e8e8;
+}
+
+td{
+    border: 1px #e8e8e8 solid;
+}
+
+.checked{
+    display:inline-block;
+    width:24px;
+    height:23px;
+    vertical-align: middle;
+    background-image: url("../../images/hatch/feature/img.png");
+    background-position: -40px 0;
+}
+
+.unchecked{
+    display:inline-block;
+    width:24px;
+    height:23px;
+    vertical-align: middle;
+    background-image: url("../../images/hatch/feature/img.png");
+    background-position: 0 0;
+}

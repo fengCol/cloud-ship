@@ -1,0 +1,37 @@
+.success-modal {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.modal-header1 {
+    min-height: 16.42857143px;
+    padding: 15px;
+}
+
+.modal-header1 .close {
+    opacity: 1;
+    color: #fff;
+}
+
+.success-modal-title {
+    background-color: #4ea4fe;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #fff;
+}
+
+.success-modal-text {
+    text-align: center;
+    padding: 33px 0;
+}
+
+.success-modal-text h4 {
+    padding-top: 18px;
+    font-weight: 800;
+}
+
+.success-modal-text p {
+    padding-top: 10px;
+    color: #999999;
+    font-size: 12px;
+}

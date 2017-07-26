@@ -1,0 +1,6 @@
+<div class="user-pwd-wrap user-change-pwd-res-wrap text-center">
+    <img src="../images/pwd-change-icon.png" alt="">
+        <strong class="change-success-text">修改成功</strong>
+        <strong>密码修改成功,请使用新密码登录,{{vm.time}}s后跳转</strong>
+        <button class="btn" style="background:#f39732;color:#ffffff" ng-click="vm.goLogin()">立即登录</button>
+</div>

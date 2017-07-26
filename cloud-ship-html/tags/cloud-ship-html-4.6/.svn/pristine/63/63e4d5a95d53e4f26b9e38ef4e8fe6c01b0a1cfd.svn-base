@@ -1,0 +1,94 @@
+.finance-ul {
+    width: 100%;
+    float: left;
+    padding: 20px;
+    border-bottom: 1px solid #edf1f2;
+    font-size: 14px;
+    /*font-weight: 600;*/
+}
+.finance-ul span{
+    float: left;
+    height: 33px;
+    line-height: 33px;
+    color: #999;
+}
+.finance-ul .expect {
+    float: right;
+    margin-right: 217px;
+    width: 220px;
+}
+@media (max-width: 1200px) {
+    .finance-ul .expect {
+        margin-right: 0;
+    }
+}
+@media (max-width: 414px) {
+    .finance-ul .expect {
+        float: left;
+        margin-left: -10px;
+        margin-top: 20px;
+    }
+}
+.finance-ul li{
+    float: left;
+    margin-left: 3rem;
+    width: 100px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+}
+@media (max-width: 320px) {
+    .finance-ul li{
+        margin-left: 10px;
+    }
+}
+.activedserver {
+    background-color: #ff971c;
+    color: #fff;
+}
+.finance-ul li:hover{
+    color: #fff;
+    background-color: #ff971c;
+    cursor: pointer;
+}
+.finance-ul li:last-child:hover{
+    background-color:white;
+    color: black;
+}
+/*卡片*/
+.angelTitle{
+    margin: 50px 0 16px;
+}
+.fengxian{
+    margin-top: 72px;
+    margin-bottom: 180px;
+}
+.hundredConpany{
+    margin-bottom: 35px;
+    padding: 0 15px;
+}
+.hundredyoufen{
+    margin-bottom: 22px;
+}
+.hundredConpany span{
+    font-size: 14px;
+    color: rgb(153, 153, 153);
+    line-height: 1.4;
+}
+.hundredConpany .yellow{
+    color: #ff971c;
+}
+.angelTitle .line-r,.angelTitle .line-l{
+    display: inline-block;
+    width: 90px;
+    border-bottom: 1px solid lightgray;
+    vertical-align: middle;
+}
+@media (max-width: 375px) {
+    .angelTitle .line-r,.angelTitle .line-l{
+        display: none;
+    }
+}
+.angelTitle span {
+    margin: 0 30px;
+}

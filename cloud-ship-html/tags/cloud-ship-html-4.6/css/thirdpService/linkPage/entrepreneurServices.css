@@ -1,0 +1,81 @@
+.breadNav>li+li:before{
+    content: none;
+}
+.breadNav > .active{
+    color: #30acfb;
+}
+.breadNav{
+    height: 52px;
+    font-size: 12px;
+    margin-bottom: 0;
+    line-height: 35px;
+    background-color: #ffffff
+}
+.breadNav span {
+    color: #ccc;
+}
+.breadNav a{
+    color: #999999;
+}
+.main-ul {
+    width: 100%;
+    float: left;
+    padding: 2rem .75rem;
+    border-bottom: 1px solid #edf1f2;
+    border-top: 1px solid #edf1f2;
+}
+.main-ul span{
+    float: left;
+    padding: .5rem;
+    font-size:1.4rem;
+    color: #999;
+}
+.main-ul li{
+    font-size: 1.4rem;
+    float: left;
+}
+.main-ul li span{
+    padding: .5rem 2.5rem;
+    color: #000;
+}
+.main-ul li:hover span{
+    color: #fff;
+    background-color: #4ea4fe;
+    cursor: pointer;
+}
+/*选中按钮样式*/
+.busin-action{
+    background-color: #4ea4fe;
+    color: #fff !important;
+}
+/*卡片*/
+.angelTitle{
+    margin: 68px 0 16px;
+}
+.hundredConpany{
+    margin-bottom: 35px;
+    padding: 0 15px;
+}
+.hundredyoufen{
+    margin-bottom: 22px;
+}
+.hundredConpany span{
+    font-size: 14px;
+    color: rgb(153, 153, 153);
+    line-height: 1.2;
+}
+.hundredConpany .yellow{
+    color: #ff971c;
+}
+/*link*/
+.helloOne{
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.hellloTwo{
+    padding-top: 20px;
+    padding-bottom: 100px;
+}
+
+
+

@@ -1,0 +1,10 @@
+<!--职业tab-->
+<occupation-tab
+        ng-if="($state.includes('skill.occupation') &&!$state.is('skill.material.daily'))|| $state.includes('skill.hall.detail')">
+
+</occupation-tab>
+<!--任务tab-->
+<task-tab ng-if="$state.includes('skill.task.detail')|| $state.includes('skill.task.daily')"></task-tab>
+
+<!--路由嵌套-->
+<ui-view></ui-view>

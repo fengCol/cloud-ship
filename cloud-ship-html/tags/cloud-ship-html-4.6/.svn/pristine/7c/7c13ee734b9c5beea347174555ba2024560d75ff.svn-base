@@ -1,0 +1,121 @@
+.loginWrap{
+    background-color: #f8f8f8;
+}
+.panel-body{
+    font-size: 14px;
+}
+.hexagon{
+    position: relative;
+}
+.error{
+    color: red;
+}
+.hexagon>p{
+    position: absolute;
+    top: 4px;
+    left: 9px;
+    color: white;
+}
+
+.verify-btn-float{
+    float:right;
+}
+
+.hexagon+li{
+    padding-left: 0;
+}
+.line{
+    width: 130px;
+    height: 1px;
+    margin-bottom: 5px;
+    background-color: #bebebe;
+}
+.unActive{
+    color: #bebebe;
+}
+.stepActive{
+    color: #5aaaeb;
+}
+.stepActive+.line{
+    background-color: #5aaaeb;
+}
+.header{
+    height: 62px;
+    font-size: 20px;
+    font-weight: bolder;
+    line-height: 41px;
+    border-bottom: 1px solid #e8e8e8;
+}
+.header img{
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+.step{
+    padding-top: 110px;
+    padding-bottom: 60px;
+}
+.step>li{
+    padding-bottom: 20px;
+}
+.margin-bottom-10{
+    margin-bottom: 10px;
+}
+.margin-bottom-0{
+    margin-bottom: 0;
+}
+.margin-bottom-145{
+    margin-bottom: 145px;
+}
+.padding-left-9{
+    padding-left: 9px;
+}
+.margin-bottom-202{
+    margin-bottom: 202px;
+}
+.margin-bottom-198{
+    margin-bottom: 198px;
+}
+.verifyImg{
+    border: 1px solid #e8e8e8;
+    height: 34px;
+    /*width: 132px;*/
+    line-height: 34px;
+}
+
+.verifyImg-error{
+    display: inline-block;
+    color: #ff0000;
+}
+
+.prompt{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 58px;
+}
+.prompt span{
+    color: red;
+}
+.prompt>div{
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+}
+.prompt div>img{
+    width: 100%;
+}
+
+.padding-right-0{
+    padding-right: 0;
+}
+
+@media screen and (max-width:767px){
+    .step{
+        padding:20px 0 ;
+    }
+    .line{
+        width:15px;
+    }
+    .verify-btn-float{
+        float:left;
+    }
+}

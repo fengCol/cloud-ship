@@ -1,0 +1,62 @@
+<div class="container">
+        <div class="row">
+            <ul class="businessService-ul">
+                <span class="front pull-left">服务类别</span>
+                <li ng-repeat="buslist in vm.parentList | limitTo:5"
+                    ng-class="{'busin1-action':vm.params.cid == buslist.id||(vm.parentList[0].id ==buslist.id&&vm.checkParentId)}"  ng-click="vm.changeServer(buslist.id,$index)">
+                    <p>
+                        {{buslist.name}}
+                        <span class="glyphicon glyphicon-chevron-down" ng-if="vm.params.cid == buslist.id||0"></span>
+                    </p>
+                    <span class="" ng-class="{'linevertical': buslist.id  != vm.clickId}"></span>
+                </li>
+                <span class="expect">（所有服务暂时仅支持北京地区）</span>
+            </ul>
+            <ul class="next-service">
+                <li ng-repeat="nextlist in vm.serverList"
+                    ng-click="vm.goAnchor(nextlist.id)"
+                    ng-class="{'busin-action':vm.params.id == nextlist.id||0}">
+                    <span class="server-title" ng-class="{'server-title2':vm.params.id == nextlist.id||0}" >{{nextlist.name}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+<div class="text-center">
+    <h3 class="busTitle">
+        <i class="line-l"></i><span>{{vm.parentList[vm.index].name}}</span><i class="line-r"></i>
+    </h3>
+</div>
+
+<div class="container fengxian-bs" id="{{nextlist.id}}"
+     ng-repeat="nextlist in vm.serverList"
+     ng-if="nextlist.listNum != 0">
+    <div class="hundredConpany">
+        <span class="pull-left chuangye">{{nextlist.name}}</span>
+        <span class="pull-left">共计<span class="yellow">{{nextlist.total}}</span>家</span>
+        <span class="pull-right checkmore"
+                ui-sref="app.link({pid:vm.parentList[vm.index].id,id:nextlist.id})">
+            更多></span>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 hellongiht" ng-repeat="comList in vm.serverList[$index].companyList | limitTo: 8">
+        <div class="companyTag"
+             ui-sref="app.details({cid:vm.serverList[{{$parent.$index}}].companyServerList[{{$index}}].cid,sid:vm.serverList[{{$parent.$index}}].companyServerList[{{$index}}].sid,
+             sname:vm.serverList[{{$parent.$index}}].name})">
+            <div class="tagLogo" style="background: url({{comList.logo}})  center no-repeat;background-size: 60% ">
+                <div class="tagLevel">
+                    <span ng-mouseenter="levelShow=true" ng-mouseleave="levelShow=false">L{{comList.grade}}级</span>
+                </div>
+            </div>
+            <div class="tagText">
+                <h4>{{comList.cname}}</h4>
+                <p>{{comList.profile}}</p>
+                <span class="yellowSpan">询价</span>
+                <span class="ooSpan">{{vm.serverList[$parent.$index].companyServerList[$index].countNum}}</span>
+                <span class="moreThan" ng-if="comList.count > 100">＋</span>
+            </div>
+            <!--<div class="levelCont" ng-if="levelShow">-->
+                <!--<p>L{{comList.grade}}级合作伙伴:</p>-->
+                <!--<p>{{comList.cooperationLevel}}</p>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>

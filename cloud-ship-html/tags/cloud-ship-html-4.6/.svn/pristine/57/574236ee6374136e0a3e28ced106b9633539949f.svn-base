@@ -1,0 +1,23 @@
+<div class="jqcarouse-style2">
+    <div id="single-quad" class="carousel slide carousel2" data-ride="carousel" data-shift="1" style="height:333px;">
+        <div class="carousel-inner friend-carousel-inner">
+            <ul class="row item active" ng-repeat="x in jqImg track by $index" style="height: 300px;">
+                <div ng-class="bol?'col-lg-4 col-md-6 col-xs-12 text-center clear-padding':'col-lg-12 col-md-12 col-xs-12 text-center clear-padding'" ng-repeat = 'img in x track by $index'>
+                        <img ng-src="{{img}}" ng-class="bol?'one-img':'one-img-web'">
+                </div>
+            </ul>
+        </div>
+
+        <a class="carousel-control left friend-carousel-hide" href=".carousel" data-slide="prev">
+            <span class="friend-banner-pre banner-pre carousel-controls" aria-hidden="true">
+                <img src="../../../images/hatch/project/prev-01.png" class="img-responsive" alt="">
+            </span>
+            <span class="sr-only">Previous</span></a>
+        <a class="carousel-control right friend-carousel-hide" href=".carousel" data-slide="next">
+            <span class="friend-banner-next banner-next carousel-controls" aria-hidden="true">
+                            <img src="../../../images/hatch/project/next-01.png" class="img-responsive" alt="">
+                        </span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>

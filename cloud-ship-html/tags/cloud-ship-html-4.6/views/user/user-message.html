@@ -1,0 +1,59 @@
+<!--系统消息-->
+<div class="user-title">
+    <h4>系统消息</h4>
+</div>
+
+
+<!--没有信的情况-->
+<div class="no-message-wrap" ng-if="messages.length==0">
+    <img src="images/user/no-message.png">
+</div>
+<!--全选-->
+<div class="user-message-allcheck-wrap" ng-if="messages.length!=0">
+    <div class="pull-left">
+        <input type="checkbox" id="check" ng-click="selectAll($event)"
+               ng-checked="isSelectedAll()">
+        <label class="choose-label" for="check">全选</label>
+    </div>
+    <div class="user-message-btn-wrap">
+        <button class="btn orange-btn" type="button" ng-click="vm.hadRead()">已读</button>
+        <button class="btn white-btn" type="button" ng-click="vm.deleteMessages()">删除</button>
+    </div>
+</div>
+
+<!--单个message部分-->
+
+<div ng-repeat="message in messages track by $index" ng-if="messages.length!=0">
+    <div class="user-message-message-wrap pointer" data-toggle="collapse" data-target="#{{$index+'page'}}"
+         ng-click="vm.showMessage(message.id,$index,message)" >
+
+        <div  >
+            <ul class="message-title-ul pull-left ">
+                <!--小红点-->
+                <li ng-show="message.mstage ==1"></li>
+                <input type="checkbox" id="check-simple{{$index}}" class="input" name="selected"
+                       ng-checked="isSelected(message.id)" ng-click="updateSelection($event, message.id)">
+                <label for="check-simple{{$index}}" class="simple-label "></label>
+                <!--<span class="message-title-color">{{message.title}}</span></li>-->
+                <li class="message-header"><strong>草船云消息：</strong>
+                    <span class="message-title-color">{{message.title}}</span></li>
+            </ul>
+        </div>
+        <div class="pull-right" style="color:#666666">
+            {{message.createAt|date:'yyyy-MM-dd HH:mm'}}
+        </div>
+    </div>
+
+    <div id="{{$index+'page'}}" class="message-content-border" ng-if="message.check">
+        <p class="message-content">{{message.content}}</p>
+    </div>
+</div>
+
+
+<!-- <pagination-user ng-if="vm.total" total="{{vm.total}}"></pagination-user> -->
+
+
+
+
+
+

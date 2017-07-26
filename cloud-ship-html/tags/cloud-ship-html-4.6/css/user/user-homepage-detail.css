@@ -1,0 +1,27 @@
+.homepage-detail-wrap ,.homepage-detail-footer-btn-wrap{
+    padding-top: 40px;
+}
+
+.homepage-detail-wrap input {
+    border-radius: 0;
+}
+
+.homepage-detail-error{
+    display: inline-block;
+    color: #ff0000;
+}
+
+.upload-head {
+    width: 145px;
+    height: 145px;
+    border: 1px solid #e6e6e6;
+    background: url('../../images/homepage-icon-ten.png') center no-repeat;
+    cursor: pointer;
+}
+.user-homepage-background-image{
+    font-size: 1.4rem;
+    cursor:pointer;
+    /*background-image:url(../../images/user/empty-logo2.png);*/
+    /*background-position:50% 50%;*/
+    /*background-repeat: no-repeat;*/
+}

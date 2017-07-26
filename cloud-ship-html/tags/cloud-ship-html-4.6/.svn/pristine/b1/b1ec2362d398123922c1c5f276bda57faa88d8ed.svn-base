@@ -1,0 +1,43 @@
+<!--header over-->
+<div class="wrap">
+    <div class="about-content">
+        <div class="container">
+            <div class="col-md-12 clear-pd">
+                <div class="tab-content">
+                    <div class="about-we">
+                        <h1 class="text-center">关于草船云</h1>
+                        <p>
+                            草船云是针对创业团队产品上线速度慢，寻找技术合伙人难的痛点，提出了技术孵化（ITVC）服务，以技术入股的方式帮助创业团队解决在创业初期所有的技术问题，包括技术咨询，产品设计，软件研发和技术团队组建等服务。
+                        </p>
+                        <p>
+                            相比于传统的孵化器，草船云能给企业带来前期咨询+中期技术支持+后期服务一条龙持久性服务，使用现金或现金+股份份额的收费方式帮助企业进行前期的发展阶段。草船云目前服务的客户主要包括传统企业客户转型、创业创新型公司的技术支持帮助等业务。
+                        </p>
+                        <h1 class="text-center">联系我们</h1>
+                        <div class=" about-logoMain text-center">
+                            <div class="col-md-3 col-xs-12 about-logo">
+                                <img src="../images/about-logo-1.png" alt="">
+                                <p>(010)59478634</p>
+                            </div>
+                            <div class="col-md-3 col-xs-12 about-logo">
+                                <img src="../images/about-logo-2.png" alt="">
+                                <p>fuhua@ptteng.com</p>
+                            </div>
+                            <div class="col-md-3 col-xs-12 about-logo">
+                                <img src="../images/about-logo-3.png" alt="">
+                                <p class="text-left">翠微路甲10#225室</p>
+                            </div>
+                            <div class="col-md-3 col-xs-12 about-logo">
+                                <img src="../images/about-logo-4.png" alt="">
+                                <p>ptteng-fuhuaqi</p>
+                            </div>
+                        </div>
+                        <div class="about-map">
+                            <img src="../images/about-map.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

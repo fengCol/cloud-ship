@@ -1,0 +1,156 @@
+/*导航*/
+.businessService-ul{
+    background-color: #fbfbfb;
+    width: 100%;
+    float: left;
+    color: #333333;
+    font-size: 14px;
+}
+.businessService-ul .front{
+    display: inline-block;
+    padding:23px 22px;
+    margin-left: 10px;
+    text-align: center;
+    color: #999;
+}
+.busin1-action{
+    background-color: #ff971c;
+    color: #fff;
+}
+.busin-action{
+    background-color: #4ea4fe;
+    color: #fff;
+}
+@media (max-width: 768px) {
+    .businessService-ul .front {
+        margin-left: 0;
+    }
+}
+.businessService-ul .expect {
+    margin-right: 195px;
+    padding:23px 0;
+    float: right;
+}
+@media (max-width: 1200px) {
+    .businessService-ul .expect {
+        margin-right: 0;
+    }
+}
+@media (max-width:768px) {
+    .businessService-ul .expect {
+        margin-right: 0;
+        margin-left: 20px;
+        float: left;
+    }
+}
+.businessService-ul li{
+    padding:23px 0;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+.businessService-ul li p {
+    display: inline-block;
+    padding: 0 22px;
+    /*border-left: 1px solid #f0f0f0;*/
+}
+.businessService-ul li .linevertical {
+    display: inline-block;
+    border-right: 1px solid #f0f0f0;
+    vertical-align: middle;
+    padding: 10px 0;
+}
+.businessService-ul li p .glyphicon {
+    left: 7px;
+    top: 3px;
+    color: #cbcbcb;
+}
+.businessService-ul li:hover{
+    background-color:#ff971c;
+    color: #FFFFFF;
+    padding-bottom: 22px;
+}
+.businessService-ul li:hover p{
+    border: none;
+}
+/*.busin-action{
+    background-color: #fff;
+}*/
+.next-service {
+    float: left;
+    padding-left: 10px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #f7f7f7;
+}
+.actived{
+    background-color: #ff971c;
+    color: #FFFFFF;
+}
+@media (max-width: 768px) {
+    .next-service {
+        padding-left: 0;
+    }
+}
+.next-service li{
+    padding:23px 0;
+    text-align: center;
+    font-size: 1.4rem;
+    float: left;
+    cursor: pointer;
+}
+.next-service li .server-title {
+    padding: 0 22px;
+    border-left: 1px solid #f0f0f0;
+}
+.server-title2{
+    border-left: 1px solid #4ea4fe!important;
+}
+.next-service li:hover{
+    cursor: pointer;
+    border: 0;
+}
+/*主体card*/
+.busTitle{
+    margin: 40px 0 16px;
+}
+.fengxian-bs{
+    margin-bottom: 60px;
+}
+.hundredConpany{
+    margin-bottom: 25px;
+    padding: 0 15px;
+}
+.hundredyoufen{
+    margin-bottom: 22px;
+}
+.hundredConpany .chuangye{
+    font-size: 18px;
+    color: #666666;
+    line-height: 1.2;
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid #b6b6b6;
+}
+.hundredConpany span{
+    font-size: 14px;
+    color: rgb(153, 153, 153);
+    line-height: 1.4;
+}
+.hundredConpany .yellow{
+    color: #ff971c;
+}
+.busTitle .line-r,.busTitle .line-l{
+    display: inline-block;
+    width: 90px;
+    border-bottom: 1px solid lightgray;
+    vertical-align: middle;
+}
+@media (max-width: 375px) {
+    .busTitle .line-r,.busTitle .line-l{
+        display: none;
+    }
+}
+.busTitle span {
+    margin: 0 30px;
+}

@@ -1,0 +1,64 @@
+<div class="container">
+    <ol class="breadcrumb breadNav">
+        <li     ng-hide="vm.id ==tid|| vm.id == fid"
+                ng-click="vm.goBackFinace()">
+            <a href="#">创业服务</a>
+            <span>&nbsp;&nbsp;&gt&nbsp</span>
+        </li>
+        <li     ng-show="vm.id ==tid || vm.id == fid"
+               ui-sref="app.finance">
+            <a href="#">项目融资</a>
+            <span>&nbsp;&nbsp;&gt&nbsp</span>
+        </li>
+        <li     ng-hide="vm.id ==tid || vm.id == fid"
+                ng-click="vm.goBackBuss()"><a href="#">{{vm.parentname}}</a><span>&nbsp;&nbsp;&gt&nbsp;</span>
+        </li>
+        <li     ng-show="vm.id ==tid || vm.id == fid"
+                ui-sref="app.finance" ><a href="#">{{vm.parentname}}</a><span>&nbsp;&nbsp;&gt&nbsp;</span>
+        </li>
+
+        <li     ng-hide="vm.id ==29 || vm.id == 30"
+                class="active">{{vm.childname}}</li>
+    </ol>
+    <div class="container main">
+        <div class="row">
+            <ul class="main-ul">
+                <span>合作等级：</span>
+                <li ng-click="getGradeList('')" >
+                    <span ng-class="{'busin-action':vm.grade==0||''}">全部</span></li>
+                <li ng-click="getGradeList(grade)"
+                    ng-repeat="grade in vm.grades | limitTo:3" >
+                    <span ng-class="{'busin-action':vm.grade==grade}">{{grade | grade}}</span></li>
+            </ul>
+        </div>
+    </div>
+    <!--<div ui-view=""></div>-->
+</div>
+<!--详情-->
+<div class="container helloOne">
+    <div class="col-lg-3 col-md-6 col-sm-12 hellongiht"
+         ng-repeat="comList in vm.companyList">
+       <div  ui-sref="app.details({cid:comList.companyServerList[0].cid,sid:comList.companyServerList[0].sid,sname:vm.serverList[0].name})">
+        <div class="companyTag">
+            <div class="tagLogo" style="background: url({{comList.logo}})   center no-repeat;background-size: 60% ">
+                <div class="tagLevel">
+                    <span ng-mouseenter="levelShow=true" ng-mouseleave="levelShow=false">L{{comList.grade}}级</span>
+                </div>
+            </div>
+            <div class="tagText">
+                <h4>{{comList.cname}}</h4>
+                <p>{{comList.profile}}</p>
+                <span class="yellowSpan">询价</span>
+                <span class="ooSpan">{{comList.companyServerList[0].countNum}}</span>
+                <span class="moreThan" ng-if="comList.count > 100">＋</span>
+            </div>
+            <!--<div class="levelCont" ng-if="levelShow">-->
+                <!--<p>L{{comList.grade}}级合作伙伴:</p>-->
+                <!--<p>{{comList.gradeCon}}</p>-->
+            <!--</div>-->
+        </div>
+       </div>
+    </div>
+</div>
+<!--翻页-->
+<!--<pagination-user total="{{vm.total}}" ng-if="vm.total"></pagination-user>-->

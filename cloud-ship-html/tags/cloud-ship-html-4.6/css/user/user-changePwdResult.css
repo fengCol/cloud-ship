@@ -1,0 +1,16 @@
+.user-change-pwd-res-wrap strong {
+    display: block;
+    padding-top: 37px;
+}
+
+.change-success-text {
+    font-size: 20px;
+}
+
+.user-change-pwd-res-wrap button {
+    margin-top: 20px;
+}
+
+.btn-width {
+    width:100%;
+}

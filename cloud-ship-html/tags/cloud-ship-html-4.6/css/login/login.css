@@ -1,0 +1,229 @@
+.loginTelImg{
+    position: absolute;
+    margin-top: -39px;
+    margin-left: 1px;
+    width: 39px;
+    height: 38px;
+    background: url(../../images/login/login-tel-user1.png) no-repeat;
+    background-size: 39px 38px;
+    z-index: 0;
+}
+.loginPwdImg{
+    position: absolute;
+    margin-top: -39px;
+    margin-left: 1px;
+    width: 39px;
+    height: 38px;
+    background: url(../../images/login/login-pwd-user1.png) no-repeat;
+    background-size: 39px 38px;
+    z-index: 0;
+}
+
+.loginOrgImg{
+    position: absolute;
+    margin-top: -39px;
+    margin-left: 1px;
+    width: 39px;
+    height: 38px;
+    background: url(../../images/login/login-org-1.png) no-repeat;
+    background-size: 39px 38px;
+    z-index: 0;
+}
+.loginInputTel:focus + i{
+    background: url(../../images/login/login-tel-user2.png) no-repeat;
+}
+.loginInputPwd:focus + i{
+    background: url(../../images/login/login-pwd-user2.png) no-repeat;
+}
+.loginInputOrg:focus + i{
+    background: url(../../images/login/login-org-2.png) no-repeat;
+}
+.loginInputTel,.loginInputPwd{
+    width: 100%;
+    height: 40px;
+    font-size: 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 0;
+    padding-left: 48px;
+}
+.padding-40{
+    padding-right: 40px;
+    padding-left: 40px;
+}
+.padding-left-0{
+    padding-left: 0;
+}
+.padding-right-0{
+    padding-right: 0;
+}
+.margin-top-5{
+    margin-top: 5px;
+}
+.margin-bottom-20{
+    margin-bottom: 20px;
+}
+.check-tips {
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+.check-psd {
+    margin-top: -40px;
+    margin-bottom: 10px;
+}
+.margin-bottom-40{
+    margin-bottom: 40px;
+}
+.font12{
+    font-size: 12px;
+    font-weight: normal;
+    color: #666666;
+    height: 0;
+}
+.login{
+    font-size: 12px;
+    font-weight: bold;
+    color: #4ea4fe;
+    padding: 15px 0;
+    margin-bottom: 70px;
+
+}
+.loginAct {
+    background-color: #f0f0f0;
+    color: #ababab;
+    border-bottom: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+}
+.logonAct{
+    background-color: #f0f0f0;
+    color: #ababab;
+    border-bottom: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+}
+.loginBtn,.loginVerify{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #bdbdbd;
+    border-radius: 0;
+}
+/*.loginVerify{*/
+    /*margin-bottom: 15px;*/
+/*}*/
+.loginVerifyBtn{
+    background-color: #4ea4fe;
+    color: white;
+}
+.loginBtn{
+    height: 40px;
+    background-color: #ff971c;
+    font-size: 16px;
+}
+.loginContainer{
+    font-size: 1.4rem;
+    padding: 0;
+    width: 384px;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+}
+.login-img {
+    margin: 50px auto;
+    text-align: center;
+}
+.loginBack{
+    margin: 50px 0;
+    background-color: #fff;
+}
+a{
+    color: #4ea4fe;
+}
+
+@media screen and (min-width: 992px) {
+    .loginContainer{
+        float: right;
+    }
+}
+@media screen and (max-width: 992px) {
+    .loginContainer{
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 992px){
+    .login-input{
+        float: none;
+    }
+    .login-img{
+        float: none;
+    }
+}
+
+@media screen and (max-width:767px){
+    .loginBack{margin-top:0}
+}
+
+@media screen and (max-width: 440px){
+    .login-input{
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .login-form{
+        width: 90%!important;
+    }
+    .login-btn{
+        width: 100%!important;
+    }
+    .loginContainer{
+        width: 100%!important;
+    }
+    .login-img img{
+        width: 100%;
+    }
+}
+.radius-0{
+    border-radius: 0;
+}
+.deal{
+    width: 1050px;
+    height: 570px;
+    font-weight: bold;
+}
+.deal .modal-body,.deal .modal-header{
+    padding: 0 200px;
+}
+.deal .modal-header{
+    background-color: #e3e3e3;
+    height: 60px;
+}
+.deal .modal-title{
+    line-height: 60px;
+}
+.margin-32{
+    margin: 32px 0;
+}
+.text-indent{
+    text-indent: 28px;
+}
+.modal-footer .btn-warning{
+    background-color: #ff971c;
+    width: 90px;
+}
+.modal-footer .btn-default{
+    color: #ff971c;
+    border-color: #ff971c;
+    width: 90px;
+}
+.modal-footer{
+    text-align: center;
+}
+
+.warning-red{
+    font-size: 10px;
+    color: red;
+    /*padding-left: 50px;*/
+    /*padding-top: 10px;*/
+}
+
+.warning-read{
+    font-size: 10px;
+    color: red;
+    padding-left: 50px;
+    padding-top: 25px;
+}

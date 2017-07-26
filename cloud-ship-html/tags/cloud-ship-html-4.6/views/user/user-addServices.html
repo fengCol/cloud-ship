@@ -1,0 +1,86 @@
+<div class="user-forService-title">
+<h4 class="user-title">服务信息</h4>
+<button ng-if="vm.id" ui-sref="app.user.forServices" class="btn orange-btn addServicesBtn">返回</button>
+</div>
+
+<div class="addServices-padding">
+    <ul>
+        <li class="clearfix">
+            <span class="pull-left padding-top-5"><b>提供服务</b></span>
+
+            <div class="form-group addServicesSelect">
+                <!--有数据展示的使用-->
+                <select ng-if="vm.id"
+                        disabled="true"
+                        class="form-control">
+                    <option>{{vm.details.sname}}</option>
+                </select>
+                <!--新增的时候使用-->
+                <select ng-if="!vm.id"
+                        class="form-control"
+                         ng-change="vm.changeSelect(vm.params.parentId)"
+                         ng-model="vm.params.parentId">
+                    <option value="">—请选择—&emsp;&emsp;&emsp;&emsp;</option>
+                    <option ng-repeat="dataPar in vm.parentList"
+                            ng-selected="vm.params.parentId == dataPar.id "
+                            ng-value="dataPar.id">{{dataPar.name}}</option>
+                </select>
+            </div>
+
+            <div class="form-group addServicesSelect">
+                <!--有数据展示的使用-->
+                    <select ng-if="vm.id"
+                            disabled="true"
+                            class="form-control">
+                        <option>{{vm.details.ssonname}}</option>
+                    </select>
+                <!--新增的时候使用-->
+                <select class="form-control"
+                        ng-if="!vm.id"
+                        ng-model="vm.search.id">
+                    <option value="">—请选择—</option>
+                    <option ng-repeat="dataChi in vm.dataChild"
+                            value={{dataChi.id}}>{{dataChi.name}}</option>
+                </select>
+            </div>
+        </li>
+        <li>
+            <span class="pull-left"><b>优惠政策</b></span>
+            <textarea ng-if="!vm.id"
+                      class="addServices-text"
+                      maxlength="300"
+                      placeholder="限300字以内" ng-model="vm.data.companyText"></textarea>
+            <textarea ng-if="vm.id"
+                      ng-disabled="vm.id"
+                      class="addServices-text"
+                      maxlength="300" placeholder="限300字以内">{{vm.details.favo}}</textarea>
+        </li>
+
+        <li class="addServices-btn" ng-if="!vm.id">
+            <button class="orange-btn addServices-btn-left" ng-click="vm.addService()">申请认证</button>
+            <button ui-sref="app.user.forServices" class="white-btn addServices-btn-right">取消</button>
+        </li>
+    </ul>
+</div>
+
+<!--&lt;!&ndash; 模态框（Modal） &ndash;&gt;-->
+<!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog"-->
+     <!--aria-labelledby="myModalLabel" aria-hidden="true">-->
+    <!--<div class="modal-dialog">-->
+        <!--<div class="modal-content success-modal">-->
+            <!--<div class="modal-header1 success-modal-title">-->
+                <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">-->
+                    <!--&times;-->
+                <!--</button>-->
+                <!--<h4 class="modal-title" id="myModalLabel">-->
+                    <!--提示-->
+                <!--</h4>-->
+            <!--</div>-->
+            <!--<div class="modal-body success-modal-text">-->
+                <!--<img src="../../images/user/success.png">-->
+                <!--<h4>&nbsp;&nbsp;&nbsp;申请成功！</h4>-->
+                <!--<p>我们将在3个工作日内给您回复</p>-->
+            <!--</div>-->
+        <!--</div>&lt;!&ndash; /.modal-content &ndash;&gt;-->
+    <!--</div>&lt;!&ndash; /.modal &ndash;&gt;-->
+<!--</div>-->

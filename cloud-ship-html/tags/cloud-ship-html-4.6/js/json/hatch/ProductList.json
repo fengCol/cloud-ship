@@ -1,0 +1,42 @@
+{
+ "code":0,
+"message":"success",
+  "data":[
+    {
+      "id":1,
+      "name":"web"
+    },
+    {
+      "id":2,
+      "name":"java"
+    },
+    {
+      "id":3,
+      "name":"pm"
+    },
+    {
+      "id":4,
+      "name":"android"
+    },
+    {
+      "id":5,
+      "name":"ios"
+    },
+    {
+      "id":6,
+      "name":"ui"
+    },
+    {
+      "id":7,
+      "name":"web"
+    },
+    {
+      "id":8,
+      "name":"op"
+    },
+    {
+      "id":9,
+      "name":"微信端"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+<div class="wrap">
+    <div class="case-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-xs-12 clear-pd" style="padding:0;font-size:20px">
+                    <ul class="case-tab">
+                        <li class="life-services active">
+                            <a onfocus="this.blur()" class="hover" href="#life-services" data-toggle="tab">
+                                生活服务
+                            </a>
+                        </li>
+                        <li class="financial-services">
+                            <a onfocus="this.blur()" href="#financial-services" data-toggle="tab">
+                                金融服务
+                            </a>
+                        </li>
+                        <li class="social-networks">
+                            <a onfocus="this.blur()" href="#social-networks" data-toggle="tab">
+                                社交网络
+                            </a>
+                        </li>
+                        <li class="medical-health">
+                            <a onfocus="this.blur()" href="#medical-health" data-toggle="tab">
+                                医疗健康
+                            </a>
+                        </li>
+                        <li class="enterprise-support">
+                            <a onfocus="this.blur()" href="#enterprise-support" data-toggle="tab">
+                                企业支持
+                            </a>
+                        </li>
+                        <div id="box2"></div>
+                    </ul>
+                </div>
+                <div class="col-md-10 col-xs-12 clear-pd">
+                    <div class="col-xs-12 col-md-12 tab-content" style="background:#f2f5f7;padding-left:0;">
+                        <div class="tab-pane fade  in active" id="life-services">
+                            <div class="life-services-right">
+                                <h1>喝我</h1>
+                                <p>
+                                    Android项目，送水工和客户双平台；客户可以在线订购桶装水，送水工可以在线抢单，结算。
+                                </p>
+                            </div>
+                            <div class="baiLiT">
+                                <h1>柏利天</h1>
+                                <p>
+                                    Web项目，专注于打造消费返利的综合性电商平台；基于商家资源整合、为用户提供线上线下360°返利服务。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="financial-services">
+                            <div class="financial-services-right">
+                                <h1>汽车金融</h1>
+                                <p>
+                                    Android项目，为客户提供汽车类金融服务。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="social-networks">
+                            <div class="social-networks-right">
+                                <h1>蒹葭</h1>
+                                <p>
+                                    iOS项目，通过APP将搭配师和客户连接在一起。APP内包括天气，地图，图片，即时通讯，在线支付等。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="medical-health">
+                            <div class="medical-health-right">
+                                <h1>找护工</h1>
+                                <p>
+                                    Android项目，为护工雇主和护工提供双向选择。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="enterprise-support">
+                            <div class="enterprise-support-right">
+                                <h1>51包装网</h1>
+                                <p>
+                                    纸盒包装盒在线订购平台，当当网，凡客诚品等电商合作商家。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function tabHoverOne() {
+        $('#box1').css('top', $('.hover').offset().top - 142);
+        $(".about-content").find('ul li').hover(function () {
+            console.log("划过");
+            $('#box1').css('top', $(this).offset().top - 142);
+        }, function () {
+            $('#box1').css('top', $('.hover').offset().top - 142);
+        });
+        $(".about-tab").find('li').click(function () {
+            for (var i = 0; i < $(".about-tab").find('li').size(); i++) {
+                if (this == $(".about-tab").find('li').get(i)) {
+                    $(".about-tab").find('li').eq(i).children('a').addClass('hover');
+                } else {
+                    $(".about-tab").find('li').eq(i).children('a').removeClass('hover');
+                }
+            }
+        })
+    });
+    $(document).ready(function tabHoverTwo() {
+        $('#box2').css('top', $('.hover').offset().top - 142);
+        $(".case-content").find('ul li').hover(function () {
+            console.log("划过");
+            $('#box2').css('top', $(this).offset().top - 142);
+        }, function () {
+            $('#box2').css('top', $('.hover').offset().top - 142);
+        });
+        $(".case-tab").find('li').click(function () {
+            for (var i = 0; i < $(".case-tab").find('li').size(); i++) {
+                if (this == $(".case-tab").find('li').get(i)) {
+                    $(".case-tab").find('li').eq(i).children('a').addClass('hover');
+                } else {
+                    $(".case-tab").find('li').eq(i).children('a').removeClass('hover');
+                }
+            }
+        })
+    });
+
+</script>

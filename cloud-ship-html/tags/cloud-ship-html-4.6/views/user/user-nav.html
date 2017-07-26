@@ -1,0 +1,56 @@
+
+<div class="wrap">
+    <div class="user-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-12">
+                    <ul class="user-tab" style="text-align: center">
+                        <li>
+                            <h4>会员中心</h4>
+                        </li>
+                        <li class="user-tab-li" ui-sref="app.user.homepage" ng-class="{'user-tab-hover':
+                        $state.is('app.user.homepage')||$state.is('app.user.homepageDetail')}">
+                            <a>个人主页&nbsp;&nbsp;</a>
+                        </li>
+                        <li class="user-tab-li" ng-class="{'user-tab-hover':
+                        $state.is('app.user.changePwd')||$state.is('app.user.changePwdResult')}">
+                            <a ui-sref="app.user.changePwd">修改密码&nbsp;&nbsp;</a>
+                        </li>
+                        <li class="user-tab-li"  ng-class="{'user-tab-hover':$state.is('app.user.message')}">
+                            <a ui-sref="app.user.message">
+                                <span ng-if="informMessage>0" style="font-size:8px;color:#F8F8F8;background-color:#F8F8F8;padding:0 5px;border-radius:6px;opacity: 0">{{vm.messageNum}}</span>
+                                消息中心&nbsp;&nbsp;
+                                <span ng-if="informMessage>0"  style="font-size:8px;color:#fff;background-color:red;padding:0 5px;border-radius:6px;">{{informMessage}}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <h4>我的公司</h4>
+                        </li>
+                        <li class="user-tab-li"  ng-class="{'user-tab-hover':
+                        $state.is('app.user.company')||$state.is('app.user.companyEdit')||$state.is('app.user.companyCooperate')}">
+                            <a ui-sref="app.user.company">公司信息&nbsp;&nbsp;</a>
+                        </li>
+                        <li class="user-tab-li"  ng-class="{'user-tab-hover':
+                        $state.is('app.user.forServices')||$state.is('app.user.addServices')}">
+                            <a ui-sref="app.user.forServices">提供服务&nbsp;&nbsp;</a>
+                        </li>
+                        <li>
+                            <h4>我的服务</h4>
+                        </li>
+                        <li class="user-tab-li"  ng-class="{'user-tab-hover':
+                        $state.is('app.user.servicesRequest')}">
+                            <a ui-sref="app.user.servicesRequest">服务申请&nbsp;&nbsp;</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-9 col-xs-12">
+                    <div class="user-right">
+                        <div data-ui-view></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

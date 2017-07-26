@@ -1,0 +1,144 @@
+<div class="project">
+    <div class="col-md-12 project-name project-border">
+        <span ng-repeat="li in vm.projectName">
+                <div ng-class="$first ? 'button-first' : 'button-border'"></div>
+                <button type="button"  ng-class="{'active': vm.id == li.id}"
+                        ng-click="vm.getDetil(li.id)">{{li.name}}</button>
+            </span>
+    </div>
+    <div class="col-md-12 project-border" style="padding-left: 0;padding-right: 0">
+        <img class="banner-img" ng-src="{{vm.projectDetil.bannerImg}}">
+        <div class="project-part bgcolor-gray">
+            <div class="project-title">
+                <h3 ng-if="vm.projectDetil.category == 0 || vm.projectDetil.category == 10">应用介绍</h3>
+                <h3 ng-if="vm.projectDetil.category == 5">网站介绍</h3>
+                <h3>INTRODUCE</h3>
+                <span>01</span>
+            </div>
+            <p class="project-feature" ng-bind-html="vm.projectDetil.introduce | to_trusted"></p>
+        </div>
+        <div class="project-part bgcolor-white">
+            <div class="project-title">
+                <h3 ng-if="vm.projectDetil.category == 0 || vm.projectDetil.category == 10">应用查看</h3>
+                <h3 ng-if="vm.projectDetil.category == 5">网站查看</h3>
+                <h3>DOWNLONG</h3>
+                <span>02</span>
+            </div>
+            <div class="col-md-9 project-check project-downlong">
+                <button type="button" ng-mouseover="hoverAndroid = true;vm.img = false" ng-show="vm.projectDetil.androidUrl">
+                    <i class="fa fa-android fa-lg"></i> Android下载
+                </button>
+                <button type="button" ng-mouseover="hoverios = true;hoverAndroid = false;vm.img = false" ng-mouseleave="hoverios = false;hoverAndroid = true" ng-show="vm.projectDetil.iosUrl">
+                    <i class="fa fa-apple fa-lg"></i> ios下载
+                </button>
+                <p>{{vm.projectDetil.function}}</p>
+                <a ng-if="vm.projectDetil.websiteUrl" href="{{vm.projectDetil.websiteUrl}}" target="_blank">进入网站>>></a>
+            </div>
+            <!--当Android二位码和ios二维码都存在时-->
+            <div class="col-md-3 text-right" ng-show="vm.projectDetil.androidUrl && vm.projectDetil.iosUrl" style="margin-left: 30px;padding-right:0;">
+                <!--<div class="project-qrcode"  ng-show="vm.img">&lt;!&ndash; ng-show="vm.androidUrl"&ndash;&gt;
+                        <img src="http://pan.baidu.com/share/qrcode?w=150&h=150&url={{vm.projectDetil.androidUrl}}" alt="">
+                        <p>扫描二维码下载Android版</p>
+                    </div>-->
+                <div class="project-qrcode" ng-show="hoverAndroid||vm.img">
+                    <!-- ng-show="vm.androidUrl"-->
+                    <!--<img src="http://pan.baidu.com/share/qrcode?w=144&h=144&url={{vm.projectDetil.androidUrl}}" alt="">-->
+                    <img src="http://pan.baidu.com/share/qrcode?w=180&h=180&url={{vm.projectDetil.androidUrl}}" alt="">
+                    <p>扫描二维码下载Android版</p>
+                </div>
+                <div class="project-qrcode" ng-show="(vm.projectDetil.iosUrl && vm.projectDetil.androidUrl == '') || hoverios">
+                    <img src="http://pan.baidu.com/share/qrcode?w=180&h=180&url={{vm.projectDetil.iosUrl}}" alt="">
+                    <p>扫描二维码下载ios版</p>
+                </div>
+            </div>
+            <!--当Android二位码或ios二维码存在时-->
+            <div class="col-md-3 text-right" ng-show="(vm.projectDetil.androidUrl && !vm.projectDetil.iosUrl)  || (!vm.projectDetil.androidUrl && vm.projectDetil.iosUrl)" style="margin-left: 30px;padding-right:0;">
+                <div class="project-qrcode" ng-show="vm.projectDetil.androidUrl">
+                    <!-- ng-show="vm.androidUrl"-->
+                    <!--<img src="http://pan.baidu.com/share/qrcode?w=144&h=144&url={{vm.projectDetil.androidUrl}}" alt="">-->
+                    <img src="http://pan.baidu.com/share/qrcode?w=180&h=180&url={{vm.projectDetil.androidUrl}}" alt="">
+                    <p>扫描二维码下载Android版</p>
+                </div>
+                <div class="project-qrcode" ng-show="vm.projectDetil.iosUrl">
+                    <img src="http://pan.baidu.com/share/qrcode?w=180&h=180&url={{vm.projectDetil.iosUrl}}" alt="">
+                    <p>扫描二维码下载ios版</p>
+                </div>
+            </div>
+        </div>
+        <div class="project-part bgcolor-gray">
+            <div class="col-md-8 project-check">
+                <div class="project-title">
+                    <h3>开发特点</h3>
+                    <h3>CHARACTERISTIC</h3>
+                    <span>03</span>
+                </div>
+                <p class="project-feature" ng-bind-html="vm.projectDetil.feature | to_trusted" style="padding-right: 70px;margin-bottom: 20px;"></p>
+            </div>
+            <div class="col-md-4 project-check mp">
+                <div class="project-title">
+                    <h3>开发详情</h3>
+                    <h3>DETAILS</h3>
+                    <span>04</span>
+                </div>
+                <p>开发周期：{{vm.projectDetil.cycle}}月</p>
+                <p>开发人员：{{vm.projectDetil.number}}</p>
+                <p>版本：{{vm.projectDetil.version}}</p>
+                <p style="padding-right: 0">开发资金：{{vm.projectDetil.fund}}万</p>
+            </div>
+            <div class="right-shade"></div>
+        </div>
+        <div class="project-part bgcolor-white" style="height:600px">
+            <div class="project-title">
+                <h3>界面视图</h3>
+                <h3>INTERFACE</h3>
+                <span>05</span>
+            </div>
+
+            <div class="banner-one" ng-if="vm.banner.length == 1">
+                <img src="../../images/hatch/project/prev-02.png" style="width:62px;height:68px;position: absolute;left: 0;top:38%">
+                <img class="one-img" src="{{vm.banner[0]}}"  ng-class="vm.projectDetil.category == 5?'one-img-web':'one-img'">
+                <img src="../../images/hatch/project/next-02.png" style="width:62px;height:68px;position: absolute;right: 0;top:38%">
+            </div>
+            <div class="banner-one" ng-if="vm.banner.length == 2 && (vm.projectDetil.category == 0 || vm.projectDetil.category == 10)">
+                <img src="../../images/hatch/project/prev-02.png" style="width:62px;height:68px;position: absolute;left: 0;top:38%">
+                <img class="one-img" src="{{vm.banner[0]}}" style="margin: 0 15px;">
+                <img class="one-img" src="{{vm.banner[1]}}" style="margin: 0 15px;">
+                <img src="../../images/hatch/project/next-02.png" style="width:62px;height:68px;position: absolute;right: 0;top:38%">
+            </div>
+            <!--<div class="banner-one" ng-if="vm.banner.length == 1 && vm.projectDetil.category == 5">
+                <img src="../../images/hatch/project/prev-02.png" style="width:62px;height:68px;position: absolute;left: 0;top:38%">
+                <img class="one-img-web" src="{{vm.banner[0]}}">
+                <img src="../../images/hatch/project/next-02.png" style="width:62px;height:68px;position: absolute;right: 0;top:38%">
+            </div>-->
+            <!--<div id="app" class='project-slide-md' ng-if="vm.banner.length > 2 && (vm.projectDetil.category == 0 || vm.projectDetil.category == 10)">
+                    &lt;!&ndash; optional navigational arrows &ndash;&gt;
+                    <button type="button" class="sliderTV__prev"></button>
+                    <button type="button" class="sliderTV__next"></button>
+                    <div id="wrapper-sliderTv">
+                        &lt;!&ndash; sliderTV html&ndash;&gt;
+
+                        <div id="sliderTV" class="sliderTV">
+                            &lt;!&ndash; slidable items in carousel &ndash;&gt;
+                            <div class="sliderTV__item" ng-repeat="img in vm.banner">
+                                <img src="{{img}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+            <!--<div class='project-slide-sm' uib-carousel active="active" interval="myInterval" ng-if="(vm.banner.length == 2 || vm.banner.length > 2)  && (vm.projectDetil.category == 0 || vm.projectDetil.category == 10)">
+                <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+                    <img class='project-slide-img' ng-src="{{slide.image}}" style="margin:auto;width:125px;height:222px;">
+                </div>
+            </div>
+            &lt;!&ndash;项目类型为web项目时且图片数量大于1张&ndash;&gt;
+            <div uib-carousel active="active"  ng-if="vm.banner.length > 1 && vm.projectDetil.category == 5">
+                <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+                    <img class='project-slide-img' ng-src="{{slide.image}}" style="margin:auto;width:500px;height:300px;">
+                </div>
+            </div>-->
+                <div class="project-part-banner bgcolor-white" ng-show="(vm.banner.length>1 && vm.projectDetil.category == 5) || (vm.banner.length>2 && vm.projectDetil.category == 0) || (vm.banner.length>2 && vm.projectDetil.category == 10)">
+                    <jqcarousetwo jq-img='vm.imgs' bol="vm.bol"></jqcarousetwo>
+                </div>
+        </div>
+    </div>
+</div>

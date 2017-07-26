@@ -1,0 +1,59 @@
+<h4 class="user-title">公司信息</h4>
+<div class="companyEdit-padding companyCooperate-padding">
+    <form class="form-horizontal" name="comCooperate">
+        <ul>
+            <li>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<b>营业执照复印件</b></span>
+                <!--<simpleUpload></simpleUpload>-->
+                <span>
+                    <simple-upload-com  ng-model="vm.data.img" multi=false></simple-upload-com>
+                </span>
+            </li>
+            <li>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>组织机构代码</b></span>
+                <input class="companyEdit-input" name="oibCode" ng-model="vm.company.barcode" ng-pattern="/^[A-Za-z0-9]+$/" type="text" required/>
+                <div class="companyEdit-error" ng-messages="comCooperate.oibCode.$error"  ng-show="comCooperate.oibCode.$touched">
+                    <div ng-message="required">内容不能为空</div>
+                    <div ng-message="pattern">请输入数字和字母</div>
+                </div>
+            </li>
+            <li>
+                <span><b>统一社会信用代码</b></span>
+                <input class="companyEdit-input" name="uscCode" ng-model="vm.company.creditCode"  ng-pattern="/^[A-Za-z0-9]+$/" type="text" required/>
+                <div class="companyEdit-error" ng-messages="comCooperate.uscCode.$error"  ng-show="comCooperate.uscCode.$touched">
+                    <div ng-message="required">内容不能为空</div>
+                    <div ng-message="pattern">请输入数字和字母</div>
+                </div>
+            </li>
+            <li class="companyCooperate-text">所有信息仅供认证用，我们不会将任何关于您的信息泄露出去</li>
+
+
+            <li class="companyEdit-btn companyCooperate-btn">
+                <button class="orange-btn companyEdit-btn-left btn" ng-disabled="comCooperate.$invalid" ng-click="vm.goRegister()">申请认证</button>
+                <button ui-sref="app.user.company" class="white-btn companyEdit-btn-right">取消</button>
+            </li>
+        </ul>
+    </form>
+</div>
+
+
+<!-- 模态框（Modal） -->
+<script type="text/ng-template" id="sureModal.html" >
+<div class="modal-dialog">
+<div class="modal-content success-modal">
+<div class="modal-header1 success-modal-title">
+<button type="button" class="close" ng-click="close()">
+&times;
+</button>
+<h4 class="modal-title" id="myModalLabel">
+提示
+</h4>
+</div>
+<div class="modal-body success-modal-text">
+<img src="../../images/user/success.png">
+<h4>&nbsp;&nbsp;&nbsp;申请成功！</h4>
+<p>我们将在3个工作日内给您回复</p>
+</div>
+</div><!-- /.modal-content -->
+</div><!-- /.modal -->
+</script>

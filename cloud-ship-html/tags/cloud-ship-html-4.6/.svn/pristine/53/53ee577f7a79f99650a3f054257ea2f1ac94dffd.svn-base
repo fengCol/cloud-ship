@@ -1,0 +1,136 @@
+.user-message-allcheck-wrap {
+    padding: 42px 20px 16px 20px;
+    border-bottom: 1px solid #f1f1f1;
+    overflow: hidden
+}
+
+.no-message-wrap{
+    width:100%;text-align:center;position:absolute;top:50%;transform: translateY(-50%);-moz-transform :translateY(-50%);-webkit-transform:translateY(-50%);
+}
+
+
+
+.user-message-message-wrap{
+    padding: 20px;
+    border-bottom: 1px solid #f1f1f1;
+    overflow: hidden;
+    font-size:14px;
+}
+.message-content1{
+    position: relative;
+}
+.absolute{
+    left: 20px;
+    bottom: 25px;
+    display: inline-block;
+    position: absolute !important;
+    z-index: 999999;
+}
+
+.message-title-ul li:first-child {
+    background: red;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    margin: 0 -35px 0 24px;
+}
+.message-title-ul li {
+    display: inline-block;
+}
+
+/*按钮组*/
+.user-message-btn-wrap{
+    float:right;
+}
+
+.choose-label {
+    font-size:18px;
+    color:#666666;
+    padding-left:10px;
+}
+.message-title-li {
+    display: inline-block;
+}
+.message-title-color {
+    color: #707070;
+}
+.message-content {
+    padding:53px 0 53px 50px;
+    word-wrap:break-word;
+    width:75%;
+    color:#666666;
+    font-size: 1.4rem;
+}
+.message-content-border {
+    border:1px solid #e8e8e8;
+}
+.message-header {
+    padding-left: 45px;
+    font-size: 16px;
+}
+/*复选框样式*/
+.style-change {
+    display: none;
+    cursor: pointer;
+}
+.style-change:focus,
+.style-change:active {
+    outline: none;
+}
+.style-change + label {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 10px;
+    color: #0b4c6a;
+}
+.simple-label {
+    top: 31px;
+}
+.style-change + label:before,
+.style-change + label:after {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    left: 0;
+    bottom: 3px;
+    border:solid 1px #d8e0f3;
+    text-align: center;
+    position: absolute;
+}
+.style-change + label:before {
+    background-color: #fafafa;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.style-change + label:after {
+    color: #fff;
+    clear: both;
+}
+.style-change:checked + label:before {
+    -moz-box-shadow: inset 0 0 0 10px #158EC6;
+    -webkit-box-shadow: inset 0 0 0 10px #158EC6;
+    box-shadow: inset 0 0 0 10px #158EC6;
+}
+/*!*Checkbox Specific styles*!*/
+/*.style-change + label:before {*/
+    /*-moz-border-radius: 3px;*/
+    /*-webkit-border-radius: 3px;*/
+    /*border-radius: 3px;*/
+/*}*/
+/*.style-change + label:hover:after,*/
+/*.style-change:checked + label:after {*/
+    /*content: "\2713";*/
+    /*line-height: 18px;*/
+    /*font-size: 14px;*/
+/*}*/
+/*.style-change + label:hover:after {*/
+    /*color: #c7c7c7;*/
+/*}*/
+/*.style-change:checked + label:after, input[type='checkbox']:checked + label:hover:after {*/
+    /*color: #fff;*/
+/*}*/
